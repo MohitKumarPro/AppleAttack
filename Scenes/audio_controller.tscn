@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfixe14iqokjg"]
+
+[ext_resource type="Script" path="res://Scripts/audio_controller.gd" id="1_hyfuy"]
+[ext_resource type="AudioStream" uid="uid://kwemskf4w5h4" path="res://Assets/Music/Rest for the wicked.mp3" id="2_nj17t"]
+[ext_resource type="AudioStream" uid="uid://ruldmepgyfin" path="res://Assets/Music/04_Fire_explosion_04_medium.wav" id="3_mobs4"]
+[ext_resource type="AudioStream" uid="uid://ju1njdbic5k4" path="res://Assets/Music/25_Wind_01.wav" id="4_vpp26"]
+[ext_resource type="AudioStream" uid="uid://bmwt5h7ywdyur" path="res://Assets/Music/61_Hit_03.wav" id="5_w7trk"]
+[ext_resource type="AudioStream" uid="uid://cx1elcuimypr0" path="res://Assets/Music/52_Dive_02.wav" id="6_0feci"]
+
+[node name="AudioController" type="Node2D"]
+script = ExtResource("1_hyfuy")
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nj17t")
+parameters/looping = true
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mobs4")
+
+[node name="Atttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vpp26")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_w7trk")
+
+[node name="dive" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_0feci")

@@ -1,0 +1,174 @@
+[gd_scene load_steps=30 format=3 uid="uid://dwjnvrmqbyn8p"]
+
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_b7iv7"]
+[ext_resource type="Texture2D" uid="uid://dvokhy8upk11q" path="res://Assets/Hero/attack/hero_attack0017.png" id="2_hgodm"]
+[ext_resource type="Texture2D" uid="uid://dm5li21fxcdy7" path="res://Assets/Hero/attack/hero_attack0016.png" id="3_0ctpy"]
+[ext_resource type="Texture2D" uid="uid://b72iyq0g6wp12" path="res://Assets/Hero/attack/hero_attack0001.png" id="4_icpay"]
+[ext_resource type="Texture2D" uid="uid://c4jcsofem1ow5" path="res://Assets/Hero/attack/hero_attack0002.png" id="5_su8h7"]
+[ext_resource type="Texture2D" uid="uid://du5puhkrlnwbq" path="res://Assets/Hero/attack/hero_attack0003.png" id="6_4w6ne"]
+[ext_resource type="Texture2D" uid="uid://d06tdkbryt31c" path="res://Assets/Hero/attack/hero_attack0004.png" id="7_a8tvo"]
+[ext_resource type="Texture2D" uid="uid://65s0tiuaapd2" path="res://Assets/Hero/attack/hero_attack0005.png" id="8_0x176"]
+[ext_resource type="Texture2D" uid="uid://bobga1oadt3b" path="res://Assets/Hero/attack/hero_attack0007.png" id="9_0565a"]
+[ext_resource type="Texture2D" uid="uid://m5ovmxoby58s" path="res://Assets/Hero/attack/hero_attack0006.png" id="10_32xdw"]
+[ext_resource type="Texture2D" uid="uid://dh8ruhuh6ggc7" path="res://Assets/Hero/idle/hero_idle0001.png" id="11_p0ht4"]
+[ext_resource type="Texture2D" uid="uid://ctkpqhydb753p" path="res://Assets/Hero/idle/hero_idle0002.png" id="12_s8wnk"]
+[ext_resource type="Texture2D" uid="uid://cnnlwc4f3xmvo" path="res://Assets/Hero/idle/hero_idle0003.png" id="13_uxkwy"]
+[ext_resource type="Texture2D" uid="uid://by03s6llpa4cu" path="res://Assets/Hero/idle/hero_idle0004.png" id="14_c10je"]
+[ext_resource type="Texture2D" uid="uid://nfbii4ud8hl" path="res://Assets/Hero/idle/hero_idle0005.png" id="15_xppsy"]
+[ext_resource type="Texture2D" uid="uid://bomolaqlfgcj8" path="res://Assets/Hero/idle/hero_idle0006.png" id="16_ayxf4"]
+[ext_resource type="Texture2D" uid="uid://q00yuqec34x" path="res://Assets/Hero/idle/hero_idle0007.png" id="17_7gwuk"]
+[ext_resource type="Texture2D" uid="uid://y161jc71oaod" path="res://Assets/Hero/idle/hero_idle0009.png" id="18_nlkby"]
+[ext_resource type="Texture2D" uid="uid://cws1px41j6dxw" path="res://Assets/Hero/idle/hero_idle0008.png" id="19_w02qs"]
+[ext_resource type="Texture2D" uid="uid://c86308vp8t0aw" path="res://Assets/Hero/jump/hero_jump0001.png" id="20_v6lwy"]
+[ext_resource type="Texture2D" uid="uid://0dqjtgajexnb" path="res://Assets/Hero/jump/hero_jump0002.png" id="21_jcnc1"]
+[ext_resource type="Texture2D" uid="uid://bdnbuug44dh1" path="res://Assets/Hero/jump/hero_jump0004.png" id="23_7s8kl"]
+[ext_resource type="Texture2D" uid="uid://c2tel1kh8hjdi" path="res://Assets/Hero/jump/hero_jump0005.png" id="24_x3cu4"]
+[ext_resource type="Texture2D" uid="uid://euvt4wxb6lg2" path="res://Assets/Hero/jump/hero_jump0006.png" id="25_cj7ai"]
+[ext_resource type="Texture2D" uid="uid://c6yq80ia4i2a6" path="res://Assets/Hero/jump/hero_jump0009.png" id="26_nbmyr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3et2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_p0ht4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgodm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ctpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_icpay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_su8h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4w6ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a8tvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0x176")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0565a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_32xdw")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_p0ht4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s8wnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uxkwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c10je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xppsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ayxf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7gwuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nlkby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w02qs")
+}],
+"loop": true,
+"name": &"Ideal",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jcnc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_v6lwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_nbmyr")
+}],
+"loop": false,
+"name": &"JumpDown",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_7s8kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x3cu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cj7ai")
+}],
+"loop": false,
+"name": &"JumpUp",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imq01"]
+radius = 22.0107
+height = 101.999
+
+[sub_resource type="Animation" id="Animation_baaww"]
+resource_name = "Attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5o3of"]
+_data = {
+"Attack": SubResource("Animation_baaww")
+}
+
+[node name="Hero" type="CharacterBody2D"]
+rotation = 0.00361523
+script = ExtResource("1_b7iv7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3et2e")
+animation = &"Attack"
+frame = 9
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.022, -10)
+shape = SubResource("CapsuleShape2D_imq01")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5o3of")
+}
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(37.978, -6)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(52.978, -6)
+
+[node name="shootSpeedTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(35, -5)
+points = PackedVector2Array(0, 0, 1000, 0)
+width = 1.0
+default_color = Color(0.393897, 0.190974, 0.113628, 1)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="shootSpeedTimer" to="." method="_on_shoot_speed_timer_timeout"]

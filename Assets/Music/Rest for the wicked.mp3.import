@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kwemskf4w5h4"
+path="res://.godot/imported/Rest for the wicked.mp3-5d7c3b19cd40d5a95e67553492c4105e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Rest for the wicked.mp3"
+dest_files=["res://.godot/imported/Rest for the wicked.mp3-5d7c3b19cd40d5a95e67553492c4105e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
