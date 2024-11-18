@@ -10,7 +10,6 @@ func _ready() -> void:
 
 
 func _on_menu_button_pressed() -> void:
-	print("called")
 	self.show()
 
 
