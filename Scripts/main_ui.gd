@@ -5,9 +5,11 @@ var current_grid = 1
 var grid_width = 881
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	self.hide()
 	num_grids = grid_container.get_child_count()
 	grid_width = grid_container.custom_minimum_size.x
+
 
 
 
