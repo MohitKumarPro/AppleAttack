@@ -94,6 +94,7 @@ columns = 5
 
 [node name="TextureButton" parent="Control/HBoxContainer/GridContainer" instance=ExtResource("1_tt6w0")]
 layout_mode = 2
+locked = false
 
 [node name="TextureButton2" parent="Control/HBoxContainer/GridContainer" instance=ExtResource("1_tt6w0")]
 layout_mode = 2
@@ -192,4 +193,3 @@ layout_mode = 2
 [connection signal="pressed" from="rightTextButton" to="." method="_on_right_text_button_pressed"]
 [connection signal="pressed" from="closeTextButton" to="." method="_on_close_text_button_pressed"]
 [connection signal="pressed" from="restartTextButton" to="." method="_on_restart_text_button_pressed"]
-[connection signal="pressed" from="Control/HBoxContainer/GridContainer/TextureButton" to="." method="_on_texture_button_pressed"]

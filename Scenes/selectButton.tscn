@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1mvgucctdstu"]
+[gd_scene load_steps=6 format=3 uid="uid://c1mvgucctdstu"]
 
-[ext_resource type="Texture2D" uid="uid://deb3ssw5k3q62" path="res://Assets/tile.png" id="1_6su4m"]
-[ext_resource type="Texture2D" uid="uid://cs2swy614wulq" path="res://Assets/locked.png" id="2_0lqg8"]
-[ext_resource type="FontFile" uid="uid://d084nrdd5fngp" path="res://Assets/Kenney Blocks.ttf" id="3_fsn8h"]
+[ext_resource type="Texture2D" uid="uid://deb3ssw5k3q62" path="res://Assets/UI/tile.png" id="1_6su4m"]
+[ext_resource type="Texture2D" uid="uid://cs2swy614wulq" path="res://Assets/UI/locked.png" id="2_0lqg8"]
+[ext_resource type="FontFile" uid="uid://d084nrdd5fngp" path="res://Assets/UI/Kenney Blocks.ttf" id="3_fsn8h"]
+[ext_resource type="Script" path="res://Scripts/select_button.gd" id="3_ussdb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ciaxa"]
 font_size = 30
@@ -17,6 +18,7 @@ texture_normal = ExtResource("1_6su4m")
 texture_disabled = ExtResource("2_0lqg8")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("3_ussdb")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -31,3 +33,5 @@ text = "1"
 label_settings = SubResource("LabelSettings_ciaxa")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
