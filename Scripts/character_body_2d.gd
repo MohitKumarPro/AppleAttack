@@ -84,6 +84,7 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor() and rotate_it:
 		animationPlay.offset =Vector2(0,-25)
 		rotation += ro_speed * delta
+
 	if back_move:
 		move_and_collide(-1*(maker_2d.global_position-maker_2d2.global_position).normalized()*SPEED)
 		
@@ -105,9 +106,11 @@ func _physics_process(delta: float) -> void:
 		line2.visible = false
 		is_freez = true
 		is_onfloor = true
+		is_onfloor = false
 		rotate_it = true
 		
 	if is_falling and is_on_floor():
+		
 		while int(rotation) !=0:
 			await get_tree().create_timer(0.1).timeout
 			if int(rotation) <0:
@@ -117,15 +120,12 @@ func _physics_process(delta: float) -> void:
 		rotation = 0
 				
 		animationPlay.play("JumpDown")
-		
-	
 
 	if air_jump and !is_on_floor():
 		animationPlay.play("JumpUp")
 	
 	# Transition to Idle when landing on the floor
 	if is_on_floor() and is_jumping:
-		
 		animationPlay.play("Ideal")
 			
 
