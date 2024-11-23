@@ -11,9 +11,11 @@ var bulletDirection = Vector2(1,0)
 const BULLET = preload("res://Scenes/bullet.tscn")
 
 @onready var animationPlay = $AnimatedSprite2D
+@onready var animationPlayDust = $AnimatedSprite2D2
 var SPEED = 10
 const JUMP_VELOCITY = -500.0
-
+signal jumpPositionBust #send position to mainscreen gdscript for jump dust animation
+signal moveBackPosition #send position to mainscreen gdscript  for jump thrust animation
 # Declare constants for attack settings
 const ATTACK_DURATION = 0.5  # Example duration for the attack animation
 var is_attacking = false
@@ -86,6 +88,7 @@ func _physics_process(delta: float) -> void:
 		rotation += ro_speed * delta
 
 	if back_move:
+		emit_signal("moveBackPosition",position,rotation) ##send signal to mainscript to creat thrust in sky
 		move_and_collide(-1*(maker_2d.global_position-maker_2d2.global_position).normalized()*SPEED)
 		
 		
@@ -99,7 +102,10 @@ func _physics_process(delta: float) -> void:
 		is_onfloor = false
 		velocity.y = JUMP_VELOCITY
 		AudioController.jumpplay()
-		animationPlay.play("JumpUp")
+		#animationPlayDust.visible =true
+		#animationPlayDust.play("dust")
+		#animationPlay.play("JumpUp")
+		emit_signal("jumpPositionBust",position) #send signal to mainscript to creat dust on ground
 		
 	if is_on_floor():
 		is_falling = true
@@ -118,7 +124,6 @@ func _physics_process(delta: float) -> void:
 			else:
 				rotation -= 0.01
 		rotation = 0
-				
 		animationPlay.play("JumpDown")
 
 	if air_jump and !is_on_floor():
@@ -164,3 +169,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_shoot_speed_timer_timeout() -> void:
 	canShoot=true
+
+
+func _on_animated_sprite_2d_2_animation_finished() -> void:
+	if animationPlayDust.animation == "dust":
+		animationPlayDust.visible =false
+		animationPlayDust.stop()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://hqubiqkp2wyl"]
+[gd_scene load_steps=28 format=4 uid="uid://hqubiqkp2wyl"]
 
 [ext_resource type="PackedScene" uid="uid://dfixe14iqokjg" path="res://Scenes/audio_controller.tscn" id="1_bsv0l"]
 [ext_resource type="Script" path="res://Scripts/Levelscene.gd" id="1_yn628"]
@@ -9,6 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://kboqai16jo3k" path="res://Scenes/Enemy.tscn" id="4_64dpm"]
 [ext_resource type="Texture2D" uid="uid://c6eed4njgeovy" path="res://Assets/UI/menu.png" id="4_fxxae"]
 [ext_resource type="PackedScene" uid="uid://7ukagojcdr8b" path="res://Scenes/MainUI.tscn" id="8_8r0n5"]
+[ext_resource type="Texture2D" uid="uid://bnb4366k10w56" path="res://Assets/Hero/dust/FX052_01.png" id="10_o5pcy"]
+[ext_resource type="Texture2D" uid="uid://c6lkjgulcsmd" path="res://Assets/Hero/dust/FX052_02.png" id="11_m3ui1"]
+[ext_resource type="Texture2D" uid="uid://b1867fu8842jn" path="res://Assets/Hero/dust/FX052_03.png" id="12_ldmr5"]
+[ext_resource type="Texture2D" uid="uid://dsfm1f8f2hq85" path="res://Assets/Hero/dust/FX052_04.png" id="13_5eei2"]
+[ext_resource type="Texture2D" uid="uid://0mklehah2l3n" path="res://Assets/Hero/BackThrust/FX033_01.png" id="14_14jj7"]
+[ext_resource type="Texture2D" uid="uid://d0wc6pjyi65lt" path="res://Assets/Hero/BackThrust/FX033_02.png" id="15_iyk2b"]
+[ext_resource type="Texture2D" uid="uid://cb3sm6yqtwhh5" path="res://Assets/Hero/BackThrust/FX033_03.png" id="16_e41c2"]
+[ext_resource type="Texture2D" uid="uid://bhip4hf3lvkkn" path="res://Assets/Hero/BackThrust/FX033_04.png" id="17_wb711"]
+[ext_resource type="Texture2D" uid="uid://bkukgk7rv3p02" path="res://Assets/Hero/BackThrust/FX033_05.png" id="18_bderv"]
+[ext_resource type="Texture2D" uid="uid://bd5q81jhudgks" path="res://Assets/Hero/BackThrust/FX033_06.png" id="19_my5am"]
+[ext_resource type="Texture2D" uid="uid://3t7brmja25fe" path="res://Assets/Hero/BackThrust/FX033_07.png" id="20_10raw"]
+[ext_resource type="Texture2D" uid="uid://dricfjpcn5pb1" path="res://Assets/Hero/BackThrust/FX033_08.png" id="21_233tf"]
+[ext_resource type="Texture2D" uid="uid://c63vcsaeg082k" path="res://Assets/Hero/BackThrust/FX033_09.png" id="22_rvvn0"]
+[ext_resource type="Texture2D" uid="uid://cc2l8ksqbl33x" path="res://Assets/Hero/BackThrust/FX033_10.png" id="23_y2omd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2oj5i"]
 texture = ExtResource("4_6l7we")
@@ -251,6 +265,64 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_2oj5i")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dykw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_o5pcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m3ui1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ldmr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5eei2")
+}],
+"loop": false,
+"name": &"Dust",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4u8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_14jj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_iyk2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_e41c2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wb711")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bderv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_my5am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_10raw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_233tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rvvn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_y2omd")
+}],
+"loop": false,
+"name": &"thrust",
+"speed": 3.0
+}]
+
 [node name="MainScene" type="Node2D"]
 position = Vector2(-7, 16)
 script = ExtResource("1_yn628")
@@ -306,4 +378,21 @@ texture_normal = ExtResource("4_fxxae")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="AnimatedSpriteDust" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_8dykw")
+animation = &"Dust"
+
+[node name="AnimatedSpriteThrust" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_g4u8e")
+animation = &"thrust"
+frame = 1
+offset = Vector2(-60, 0)
+flip_h = true
+
+[connection signal="jumpPositionBust" from="Hero" to="." method="_on_hero_jump_position_bust"]
+[connection signal="moveBackPosition" from="Hero" to="." method="_on_hero_move_back_position"]
 [connection signal="pressed" from="LevelCanvas/MenuButton" to="MainUI" method="_on_menu_button_pressed"]
+[connection signal="animation_finished" from="AnimatedSpriteDust" to="." method="_on_animated_sprite_dust_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSpriteThrust" to="." method="_on_animated_sprite_thrust_animation_finished"]
