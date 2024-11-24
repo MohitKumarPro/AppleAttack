@@ -1,8 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwjnvrmqbyn8p"]
+[gd_scene load_steps=37 format=3 uid="uid://dwjnvrmqbyn8p"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_b7iv7"]
 [ext_resource type="Texture2D" uid="uid://dvokhy8upk11q" path="res://Assets/Hero/attack/hero_attack0017.png" id="2_hgodm"]
+[ext_resource type="Texture2D" uid="uid://daeixa1e7w7gu" path="res://Assets/Hero/attack/Main Ship - Engines - Supercharged Engine.png" id="2_kmrfq"]
 [ext_resource type="Texture2D" uid="uid://dm5li21fxcdy7" path="res://Assets/Hero/attack/hero_attack0016.png" id="3_0ctpy"]
+[ext_resource type="Texture2D" uid="uid://c1fqim1jllf3a" path="res://Assets/Hero/attack/Main Ship - Engines - Supercharged Engine - Powering.png" id="3_yvfid"]
 [ext_resource type="Texture2D" uid="uid://b72iyq0g6wp12" path="res://Assets/Hero/attack/hero_attack0001.png" id="4_icpay"]
 [ext_resource type="Texture2D" uid="uid://c4jcsofem1ow5" path="res://Assets/Hero/attack/hero_attack0002.png" id="5_su8h7"]
 [ext_resource type="Texture2D" uid="uid://du5puhkrlnwbq" path="res://Assets/Hero/attack/hero_attack0003.png" id="6_4w6ne"]
@@ -25,6 +27,42 @@
 [ext_resource type="Texture2D" uid="uid://c2tel1kh8hjdi" path="res://Assets/Hero/jump/hero_jump0005.png" id="24_x3cu4"]
 [ext_resource type="Texture2D" uid="uid://euvt4wxb6lg2" path="res://Assets/Hero/jump/hero_jump0006.png" id="25_cj7ai"]
 [ext_resource type="Texture2D" uid="uid://c6yq80ia4i2a6" path="res://Assets/Hero/jump/hero_jump0009.png" id="26_nbmyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xysjx"]
+atlas = ExtResource("3_yvfid")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfshr"]
+atlas = ExtResource("3_yvfid")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dylt"]
+atlas = ExtResource("3_yvfid")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak417"]
+atlas = ExtResource("3_yvfid")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgj3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xysjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfshr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dylt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak417")
+}],
+"loop": true,
+"name": &"Flames",
+"speed": 15.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3et2e"]
 animations = [{
@@ -140,7 +178,23 @@ _data = {
 rotation = 0.00361523
 script = ExtResource("1_b7iv7")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.03976, -10.9963)
+scale = Vector2(3.52657, 2.77056)
+texture = ExtResource("2_kmrfq")
+
+[node name="AnimatedSpriteFlame" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.0650741, -17.9999)
+scale = Vector2(3.34165, 3.40271)
+sprite_frames = SubResource("SpriteFrames_mgj3x")
+animation = &"Flames"
+frame = 1
+frame_progress = 0.722374
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3et2e")
 animation = &"JumpUp"
 

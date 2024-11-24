@@ -320,7 +320,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"thrust",
-"speed": 3.0
+"speed": 15.0
 }]
 
 [node name="MainScene" type="Node2D"]
@@ -355,7 +355,7 @@ tile_set = SubResource("TileSet_7dup6")
 position = Vector2(514, 192)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(767, 507)
+position = Vector2(767, 520)
 zoom = Vector2(2, 2)
 limit_bottom = 720
 position_smoothing_enabled = true
@@ -385,10 +385,11 @@ animation = &"Dust"
 
 [node name="AnimatedSpriteThrust" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
+scale = Vector2(1.8, 1.8)
 sprite_frames = SubResource("SpriteFrames_g4u8e")
 animation = &"thrust"
 frame = 1
-offset = Vector2(-60, 0)
+offset = Vector2(65, 0)
 flip_h = true
 
 [connection signal="jumpPositionBust" from="Hero" to="." method="_on_hero_jump_position_bust"]

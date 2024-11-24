@@ -43,7 +43,3 @@ func _process(delta: float) -> void:
 			zoom = Vector2(2*(1 - (0.5*distance_to_bottom)/700),2*(1 - (0.5*distance_to_bottom)/700))
 		else:
 			zoom = Vector2(1,1)
-		#if  false:
-			#zoom = Vector2(1,1)
-		#else:
-			#zoom = Vector2(2,2)

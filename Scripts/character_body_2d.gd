@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var maker_2d = $Marker2D2
 @onready var AudioController = $"../AudioController"
 @onready var shoot_speed_timer = $shootSpeedTimer
+@onready var flame = $AnimatedSpriteFlame
+
 var canShoot = true
 var bulletDirection = Vector2(1,0)
 const BULLET = preload("res://Scenes/bullet.tscn")
@@ -115,6 +117,7 @@ func _physics_process(delta: float) -> void:
 		is_onfloor = false
 		rotate_it = true
 		
+		
 	if is_falling and is_on_floor():
 		
 		while int(rotation) !=0:
@@ -124,6 +127,8 @@ func _physics_process(delta: float) -> void:
 			else:
 				rotation -= 0.01
 		rotation = 0
+		flame.visible = false
+		flame.stop()
 		animationPlay.play("JumpDown")
 
 	if air_jump and !is_on_floor():
@@ -133,6 +138,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and is_jumping:
 		animationPlay.play("Ideal")
 			
+	if !is_on_floor():
+		flame.visible = true
+		flame.play()
 
 	move_and_slide()
 
