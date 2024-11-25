@@ -13,7 +13,6 @@ var bulletDirection = Vector2(1,0)
 const BULLET = preload("res://Scenes/bullet.tscn")
 
 @onready var animationPlay = $AnimatedSprite2D
-@onready var animationPlayDust = $AnimatedSprite2D2
 var SPEED = 10
 const JUMP_VELOCITY = -500.0
 signal jumpPositionBust #send position to mainscreen gdscript for jump dust animation
@@ -177,9 +176,3 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_shoot_speed_timer_timeout() -> void:
 	canShoot=true
-
-
-func _on_animated_sprite_2d_2_animation_finished() -> void:
-	if animationPlayDust.animation == "dust":
-		animationPlayDust.visible =false
-		animationPlayDust.stop()
