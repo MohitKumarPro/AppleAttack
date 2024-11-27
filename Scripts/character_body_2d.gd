@@ -1,24 +1,29 @@
 extends CharacterBody2D
+
+@export var  appleCount:int #provide mnumber of apples to player 
+@export var shootSpeed = 1.0
+
 #bullet
 @onready var line2 = $Line2D
-@export var shootSpeed = 1.0
 @onready var maker_2d2 = $Marker2D
 @onready var maker_2d = $Marker2D2
 @onready var AudioController = $"../AudioController"
 @onready var shoot_speed_timer = $shootSpeedTimer
 @onready var flame = $AnimatedSpriteFlame
+@onready var animationPlay = $AnimatedSprite2D
+
+signal jumpPositionBust #send position to mainscreen gdscript for jump dust animation
+signal moveBackPosition #send position to mainscreen gdscript  for jump thrust animation
+signal applesCount #send the  number of apples available
+
+const BULLET = preload("res://Scenes/bullet.tscn")
+const JUMP_VELOCITY = -500.0
+const ATTACK_DURATION = 0.5  # Example duration for the attack animation
 
 var canShoot = true
 var bulletDirection = Vector2(1,0)
-const BULLET = preload("res://Scenes/bullet.tscn")
-
-@onready var animationPlay = $AnimatedSprite2D
 var SPEED = 10
-const JUMP_VELOCITY = -500.0
-signal jumpPositionBust #send position to mainscreen gdscript for jump dust animation
-signal moveBackPosition #send position to mainscreen gdscript  for jump thrust animation
 # Declare constants for attack settings
-const ATTACK_DURATION = 0.5  # Example duration for the attack animation
 var is_attacking = false
 var attack_timer = 0.0
 # Variables to manage jump state
@@ -32,11 +37,15 @@ var rotate_it = true
 var air_jump = false
 var ro_speed = 5
 var shoot_ready = true
+
+
+
 func _ready() -> void:
 	AudioController.back_play()
 	animationPlay.play("Ideal")
 	shoot_speed_timer.wait_time = 1.0/ shootSpeed
 	line2.visible = false
+	emit_signal("applesCount",appleCount) #initialize count of  apple in canvas screenn
 
 func shoot():
 	if canShoot:
@@ -82,8 +91,9 @@ func _physics_process(delta: float) -> void:
 		is_freez =  true
 		rotate_it = true
 		air_jump = true
-		
-		
+		appleCount = appleCount - 1 #reduce count of apple in each through
+		emit_signal("applesCount",appleCount) #emit signal to reduce count of apples in canvas screen 
+
 	if !is_on_floor() and rotate_it:
 		animationPlay.offset =Vector2(0,-25)
 		rotation += ro_speed * delta
@@ -140,8 +150,14 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		flame.visible = true
 		flame.play()
+	
+	if appleCount <= 0:
+		if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
+			get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 	move_and_slide()
+	
+	
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
