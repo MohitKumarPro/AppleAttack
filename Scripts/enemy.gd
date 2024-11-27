@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var doctorEnemyCount:int
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 @onready var animationEnemy = $AnimatedSprite2D
 @onready var AudioController = $"../AudioController"
 
+signal currentEnemyCount
 var is_alive = true
 
 func _physics_process(delta: float) -> void:
@@ -15,7 +16,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	if is_alive:
 		animationEnemy.play("Walk")
-	## Handle jump.
+	
+		## Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
 #
@@ -31,6 +33,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	emit_signal("currentEnemyCount")
 	is_alive = false
 	AudioController.hitplay()
 	AudioController.diveplay()
