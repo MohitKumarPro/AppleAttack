@@ -1,11 +1,14 @@
 extends CharacterBody2D
-
+@export var doctorEnemyCount:int
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+
 @onready var animationEnemy = $AnimatedSprite2D
 @onready var AudioController = $"../AudioController"
+
 var is_alive = true
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -25,10 +28,6 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-
-	
-	
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
