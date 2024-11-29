@@ -55,5 +55,5 @@ func _on_right_text_button_pressed() -> void: #right  button on levelselec canva
 
 func animateGridPosition(finalValue):
 	create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT).tween_property(
-		grid_container,"position:x",finalValue, 1.5
+		grid_container,"position:x",finalValue, 0.5
 	)
