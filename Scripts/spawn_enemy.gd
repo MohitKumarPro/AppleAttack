@@ -17,7 +17,6 @@ func _ready() -> void:
 	get_parent().add_child.call_deferred(enemyDoctorSpawn)
 	enemyDoctorSpawn.call_deferred("add_to_group", "enemies")
 	enemyDoctorSpawn.currentEnemyCount.connect(_on_enemy_current_enemy_count)
-	print("enemycount",enemyCount)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,4 +28,3 @@ func _process(delta: float) -> void:
 
 func _on_enemy_current_enemy_count() -> void: #signal sent from enemy node whenn enemy is  killed
 	enemyCount = enemyCount-1
-	print("cueent",enemyCount)
