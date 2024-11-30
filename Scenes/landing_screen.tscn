@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://3way58yoqa08"]
+[gd_scene load_steps=19 format=3 uid="uid://3way58yoqa08"]
 
+[ext_resource type="Script" path="res://Scripts/landing_screen.gd" id="1_in30e"]
 [ext_resource type="Texture2D" uid="uid://b72iyq0g6wp12" path="res://Assets/Hero/attack/hero_attack0001.png" id="1_k6io4"]
 [ext_resource type="Texture2D" uid="uid://bw7kb1k2ywbly" path="res://Assets/enemy01/death/enemy01_death0001.png" id="2_27pjy"]
 [ext_resource type="Texture2D" uid="uid://coxaly1iyrlc8" path="res://Assets/enemy01/death/enemy01_death0006.png" id="3_lmok4"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://f57bx8u8vi12" path="res://Assets/UI/settings.png" id="17_jwxte"]
 
 [node name="LandingScreen" type="CanvasLayer"]
+script = ExtResource("1_in30e")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 texture_filter = 1
@@ -29,9 +31,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.941176, 0.941176, 0.941176, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1238.0
 offset_top = 12.0
 offset_right = 1388.0
@@ -39,9 +42,10 @@ offset_bottom = 183.0
 rotation = 0.652753
 texture = ExtResource("1_k6io4")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 137.0
 offset_top = 31.0
 offset_right = 287.0
@@ -49,9 +53,10 @@ offset_bottom = 202.0
 rotation = 0.652753
 texture = ExtResource("2_27pjy")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1448.0
 offset_top = 227.0
 offset_right = 1598.0
@@ -59,9 +64,10 @@ offset_bottom = 398.0
 rotation = 0.652753
 texture = ExtResource("3_lmok4")
 
-[node name="TextureRect4" type="TextureRect" parent="."]
+[node name="TextureRect4" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1261.0
 offset_top = 203.0
 offset_right = 1411.0
@@ -69,9 +75,10 @@ offset_bottom = 374.0
 rotation = 0.652753
 texture = ExtResource("4_dbn2j")
 
-[node name="TextureRect5" type="TextureRect" parent="."]
+[node name="TextureRect5" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 190.0
 offset_top = 460.0
 offset_right = 340.0
@@ -79,9 +86,10 @@ offset_bottom = 631.0
 rotation = 0.652753
 texture = ExtResource("5_7d8p3")
 
-[node name="TextureRect6" type="TextureRect" parent="."]
+[node name="TextureRect6" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1442.0
 offset_top = 473.0
 offset_right = 1592.0
@@ -89,9 +97,10 @@ offset_bottom = 644.0
 rotation = -0.164061
 texture = ExtResource("6_dje3n")
 
-[node name="TextureRect7" type="TextureRect" parent="."]
+[node name="TextureRect7" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1116.0
 offset_top = 520.0
 offset_right = 1266.0
@@ -99,9 +108,10 @@ offset_bottom = 691.0
 rotation = -0.652753
 texture = ExtResource("2_27pjy")
 
-[node name="TextureRect8" type="TextureRect" parent="."]
+[node name="TextureRect8" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 365.0
 offset_top = 18.0
 offset_right = 515.0
@@ -109,9 +119,10 @@ offset_bottom = 189.0
 rotation = 0.652753
 texture = ExtResource("7_jyam3")
 
-[node name="TextureRect9" type="TextureRect" parent="."]
+[node name="TextureRect9" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 699.0
 offset_top = 546.0
 offset_right = 849.0
@@ -119,9 +130,10 @@ offset_bottom = 717.0
 rotation = 1.79594
 texture = ExtResource("8_8gbbl")
 
-[node name="TextureRect10" type="TextureRect" parent="."]
+[node name="TextureRect10" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1057.0
 offset_top = 63.0
 offset_right = 1207.0
@@ -129,9 +141,10 @@ offset_bottom = 234.0
 rotation = 0.652753
 texture = ExtResource("9_w1iow")
 
-[node name="TextureRect11" type="TextureRect" parent="."]
+[node name="TextureRect11" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 826.0
 offset_top = 460.0
 offset_right = 976.0
@@ -139,9 +152,10 @@ offset_bottom = 631.0
 rotation = -0.490438
 texture = ExtResource("10_8sam5")
 
-[node name="TextureRect12" type="TextureRect" parent="."]
+[node name="TextureRect12" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 260.0
 offset_top = 232.0
 offset_right = 410.0
@@ -149,9 +163,10 @@ offset_bottom = 403.0
 rotation = 1.14319
 texture = ExtResource("11_n3y0w")
 
-[node name="TextureRect13" type="TextureRect" parent="."]
+[node name="TextureRect13" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 298.0
 offset_top = 457.0
 offset_right = 448.0
@@ -159,9 +174,10 @@ offset_bottom = 628.0
 rotation = 0.162316
 texture = ExtResource("12_hwgey")
 
-[node name="TextureRect14" type="TextureRect" parent="."]
+[node name="TextureRect14" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 409.0
 offset_top = 204.0
 offset_right = 561.0
@@ -169,9 +185,10 @@ offset_bottom = 362.0
 rotation = 0.326377
 texture = ExtResource("13_5txm7")
 
-[node name="TextureRect15" type="TextureRect" parent="."]
+[node name="TextureRect15" type="TextureRect" parent="ColorRect"]
 modulate = Color(1, 1, 1, 0.54902)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1470.0
 offset_right = 1620.0
 offset_bottom = 171.0
@@ -204,3 +221,5 @@ offset_bottom = 649.0
 texture_normal = ExtResource("17_jwxte")
 ignore_texture_size = true
 stretch_mode = 5
+
+[connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]

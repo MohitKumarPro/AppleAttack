@@ -21,7 +21,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if enemyCount <= 0: #call game over  when no enemies in scene
-		print(enemyCount)
+		GameManager.add_json(GameManager.current_level+1, 1, 1, GameManager.data)
 		if FileAccess.file_exists("res://Scenes/GameWin.tscn"): #check if file exsist or not
 			get_tree().change_scene_to_file("res://Scenes/GameWin.tscn")
 

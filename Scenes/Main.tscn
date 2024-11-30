@@ -7,10 +7,10 @@
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="4_2tqm3"]
 [ext_resource type="Texture2D" uid="uid://de06wyxtssfi3" path="res://Assets/UI/Terrain (16x16).png" id="4_6l7we"]
 [ext_resource type="PackedScene" uid="uid://kboqai16jo3k" path="res://Scenes/Enemy.tscn" id="4_64dpm"]
-[ext_resource type="Texture2D" uid="uid://c6eed4njgeovy" path="res://Assets/UI/menu.png" id="4_fxxae"]
 [ext_resource type="PackedScene" uid="uid://7ukagojcdr8b" path="res://Scenes/MainUI.tscn" id="8_8r0n5"]
 [ext_resource type="Script" path="res://Scripts/level_canvas.gd" id="9_0gg3t"]
 [ext_resource type="Texture2D" uid="uid://cyns5m1ranhqo" path="res://Assets/props/prop_projectile.png" id="10_11wig"]
+[ext_resource type="Texture2D" uid="uid://cvoqyj464d06h" path="res://Assets/UI/pause.png" id="10_bphi4"]
 [ext_resource type="Texture2D" uid="uid://bnb4366k10w56" path="res://Assets/Hero/dust/FX052_01.png" id="10_o5pcy"]
 [ext_resource type="Texture2D" uid="uid://c6lkjgulcsmd" path="res://Assets/Hero/dust/FX052_02.png" id="11_m3ui1"]
 [ext_resource type="Texture2D" uid="uid://b1867fu8842jn" path="res://Assets/Hero/dust/FX052_03.png" id="12_ldmr5"]
@@ -380,15 +380,15 @@ offset_left = 10.0
 offset_top = 4.0
 offset_right = 95.0
 offset_bottom = 65.0
-texture_normal = ExtResource("4_fxxae")
+texture_normal = ExtResource("10_bphi4")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect" type="TextureRect" parent="LevelCanvas"]
 offset_left = 90.0
-offset_top = 3.0
+offset_top = 4.0
 offset_right = 153.0
-offset_bottom = 60.0
+offset_bottom = 61.0
 texture = ExtResource("10_11wig")
 stretch_mode = 5
 
