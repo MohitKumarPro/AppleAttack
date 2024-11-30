@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/select_button.gd" id="3_ussdb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ciaxa"]
-font_size = 30
+font_size = 50
 
 [node name="TextureButton" type="TextureButton"]
 custom_minimum_size = Vector2(50, 50)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2jg6jklwuav2"]
+
+[ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_p16bx"]
+
+[node name="MainScene" instance=ExtResource("1_p16bx")]
+
+[node name="TextureRect" parent="." index="1"]
+offset_top = -16.0
