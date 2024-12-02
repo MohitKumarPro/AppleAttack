@@ -223,3 +223,4 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
+[connection signal="pressed" from="TextureButtonSetting" to="." method="_on_texture_button_setting_pressed"]
