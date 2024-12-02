@@ -360,7 +360,7 @@ position = Vector2(1180, 176)
 
 [node name="Hero" parent="." instance=ExtResource("2_fi4i7")]
 position = Vector2(514, 192)
-appleCount = 100
+appleCount = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(767, 520)

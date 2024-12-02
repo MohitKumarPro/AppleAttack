@@ -9,7 +9,6 @@ var background_play = true
 
 func back_play():
 	if background_play:
-		print("play")
 		BackMusic.play()
 
 	
