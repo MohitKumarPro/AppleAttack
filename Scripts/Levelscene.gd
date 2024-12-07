@@ -1,11 +1,12 @@
 extends Node2D
 @onready var createDust = $AnimatedSpriteDust
 @onready var createThrust = $AnimatedSpriteThrust
-
+@export var  thisLevelNbr :int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	createThrust.visible = false
 	createDust.visible = false
+	GameManager.current_level = thisLevelNbr
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

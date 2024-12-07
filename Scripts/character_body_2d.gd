@@ -27,7 +27,7 @@ var SPEED = 10
 var is_attacking = false
 var attack_timer = 0.0
 # Variables to manage jump state
-var is_jumping = false
+var is_jumping = true
 var is_falling = false
 var is_onfloor = true
 var is_freez = true

@@ -8,7 +8,7 @@ var background_play = true
 # Called when the node enters the scene tree for the first time.
 
 func back_play():
-	if background_play:
+	if AudioController.background_play == true:
 		BackMusic.play()
 
 	
