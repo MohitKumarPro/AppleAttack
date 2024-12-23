@@ -22,7 +22,7 @@ GameManager="*res://Scripts/GameManager.gd"
 
 [display]
 
-window/size/viewport_width=1596
+window/size/viewport_width=1536
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 

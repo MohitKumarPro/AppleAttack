@@ -196,7 +196,7 @@ frame_progress = 0.722374
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3et2e")
-animation = &"JumpUp"
+animation = &"Attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.022, -10)
@@ -220,7 +220,7 @@ wait_time = 0.1
 position = Vector2(35, -5)
 points = PackedVector2Array(0, 0, 1000, 0)
 width = 1.0
-default_color = Color(0.393897, 0.190974, 0.113628, 1)
+default_color = Color(0.989862, 0.949808, 0.935382, 1)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="shootSpeedTimer" to="." method="_on_shoot_speed_timer_timeout"]
