@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_ybrkc"]
 
-[sub_resource type="Gradient" id="Gradient_s4g0w"]
+[sub_resource type="Gradient" id="Gradient_cm43b"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.047619, 0.047619, 0.047619, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5hxu8"]
-gradient = SubResource("Gradient_s4g0w")
+gradient = SubResource("Gradient_cm43b")
 fill = 1
 fill_from = Vector2(0.489, 0.5)
 
@@ -25,6 +25,12 @@ position = Vector2(963, -25)
 
 [node name="Hero" parent="." index="4"]
 position = Vector2(514, -44)
+
+[node name="AnimatedSpriteDust" parent="." index="8"]
+visible = true
+
+[node name="AnimatedSpriteThrust" parent="." index="9"]
+visible = true
 
 [node name="SpawnEnemy" parent="." index="10"]
 enemyCount = 2
