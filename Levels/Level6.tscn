@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://dh07pidx0d5i8"]
+[gd_scene load_steps=5 format=4 uid="uid://dh07pidx0d5i8"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_q1oak"]
+[ext_resource type="Texture2D" uid="uid://cow0v2y5c1nmc" path="res://Assets/UI/6.png" id="2_lisun"]
 
 [sub_resource type="Gradient" id="Gradient_7cag3"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -28,6 +29,9 @@ position = Vector2(578, 230)
 
 [node name="MainUI" parent="." index="6"]
 visible = true
+
+[node name="TextureRectNbr" parent="LevelCanvas" index="5"]
+texture = ExtResource("2_lisun")
 
 [node name="AnimatedSpriteDust" parent="." index="8"]
 visible = true

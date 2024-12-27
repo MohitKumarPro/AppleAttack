@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://djp4omhmg288v"]
+[gd_scene load_steps=5 format=4 uid="uid://djp4omhmg288v"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_lx3fq"]
+[ext_resource type="Texture2D" uid="uid://cybiivb4ktk41" path="res://Assets/UI/7.png" id="2_tw7oc"]
 
 [sub_resource type="Gradient" id="Gradient_oa4j5"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -25,6 +26,9 @@ position = Vector2(1171, 59)
 
 [node name="LevelCanvas" parent="." index="7"]
 visible = false
+
+[node name="TextureRectNbr" parent="LevelCanvas" index="5"]
+texture = ExtResource("2_tw7oc")
 
 [node name="SpawnEnemy" parent="." index="10"]
 enemyCount = 4

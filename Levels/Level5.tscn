@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://c03e4xgxb80kb"]
+[gd_scene load_steps=5 format=4 uid="uid://c03e4xgxb80kb"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_y6uwr"]
+[ext_resource type="Texture2D" uid="uid://dqfdmlq210tt" path="res://Assets/UI/5.png" id="2_p6rja"]
 
 [sub_resource type="Gradient" id="Gradient_hw7fp"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -26,8 +27,17 @@ position = Vector2(1374, 176)
 [node name="Hero" parent="." index="4"]
 position = Vector2(603, 21)
 
-[node name="LevelCanvas" parent="." index="7"]
-visible = false
+[node name="MainUI" parent="." index="6"]
+visible = true
+
+[node name="TextureRectNbr" parent="LevelCanvas" index="5"]
+texture = ExtResource("2_p6rja")
+
+[node name="AnimatedSpriteDust" parent="." index="8"]
+visible = true
+
+[node name="AnimatedSpriteThrust" parent="." index="9"]
+visible = true
 
 [node name="SpawnEnemy" parent="." index="10"]
 numbers = Array[Vector2]([Vector2(1530, -150), Vector2(17, 190)])

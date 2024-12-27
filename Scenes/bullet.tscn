@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuoirdnlmix6n"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_e8yp7"]
-[ext_resource type="Texture2D" uid="uid://butxt574ponit" path="res://Assets/props/prop_projectile04.png" id="2_xrf7o"]
+[ext_resource type="Texture2D" uid="uid://cyns5m1ranhqo" path="res://Assets/props/prop_projectile.png" id="2_dmsgc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jnog"]
 radius = 11.0454
@@ -10,7 +10,7 @@ radius = 11.0454
 script = ExtResource("1_e8yp7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xrf7o")
+texture = ExtResource("2_dmsgc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 5)
