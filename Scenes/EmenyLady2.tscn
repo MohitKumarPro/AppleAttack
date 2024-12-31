@@ -1,0 +1,107 @@
+[gd_scene load_steps=23 format=3 uid="uid://crnubu2y60536"]
+
+[ext_resource type="Texture2D" uid="uid://d2vdjhcnt6kxe" path="res://Assets/enemy02/death/enemy02_death0001.png" id="1_dm8pf"]
+[ext_resource type="Script" path="res://Scripts/emeny_lady_2.gd" id="1_egisk"]
+[ext_resource type="Texture2D" uid="uid://pepsedimtndh" path="res://Assets/enemy02/death/enemy02_death0002.png" id="2_5ijto"]
+[ext_resource type="Texture2D" uid="uid://cyx6lotjr4vt6" path="res://Assets/enemy02/death/enemy02_death0003.png" id="3_1kpis"]
+[ext_resource type="Texture2D" uid="uid://4b6tnufpfbkj" path="res://Assets/enemy02/death/enemy02_death0004.png" id="4_1jumd"]
+[ext_resource type="Texture2D" uid="uid://drn8ygrupkuw7" path="res://Assets/enemy02/death/enemy02_death0005.png" id="5_rtlku"]
+[ext_resource type="Texture2D" uid="uid://ceqgxys7ylcir" path="res://Assets/enemy02/death/enemy02_death0006.png" id="6_1xbbb"]
+[ext_resource type="Texture2D" uid="uid://ck1k86da1rjue" path="res://Assets/enemy02/death/enemy02_death0007.png" id="7_3peur"]
+[ext_resource type="Texture2D" uid="uid://bfausgukkx5fe" path="res://Assets/enemy02/death/enemy02_death0008.png" id="8_qsl7m"]
+[ext_resource type="Texture2D" uid="uid://em4n4v6fxf86" path="res://Assets/enemy02/death/enemy02_death0009.png" id="9_cy3xe"]
+[ext_resource type="Texture2D" uid="uid://jqp3t3a5qku1" path="res://Assets/enemy02/death/enemy02_death0010.png" id="10_c22ek"]
+[ext_resource type="Texture2D" uid="uid://byus8j3fp7oyh" path="res://Assets/enemy02/death/enemy02_death0011.png" id="11_jl2md"]
+[ext_resource type="Texture2D" uid="uid://u35b5vc8on8h" path="res://Assets/enemy02/walk/enemy02_walk0001.png" id="12_mywy3"]
+[ext_resource type="Texture2D" uid="uid://xtrl57q3ggd6" path="res://Assets/enemy02/walk/enemy02_walk0002.png" id="13_47t2a"]
+[ext_resource type="Texture2D" uid="uid://c61nk3hdx1i5t" path="res://Assets/enemy02/walk/enemy02_walk0005.png" id="14_xfemx"]
+[ext_resource type="Texture2D" uid="uid://b4d5ui57vucgh" path="res://Assets/enemy02/walk/enemy02_walk0006.png" id="15_w5tv0"]
+[ext_resource type="Texture2D" uid="uid://r4v7f78tvhr6" path="res://Assets/enemy02/walk/enemy02_walk0009.png" id="16_r5ihd"]
+[ext_resource type="Texture2D" uid="uid://do8b7erag6r6h" path="res://Assets/enemy02/walk/enemy02_walk0010.png" id="17_5lfx0"]
+[ext_resource type="Texture2D" uid="uid://cidpyx1xscngs" path="res://Assets/enemy02/walk/enemy02_walk0013.png" id="18_otre3"]
+[ext_resource type="Texture2D" uid="uid://firxlfg2u07o" path="res://Assets/enemy02/walk/enemy02_walk0014.png" id="19_xlqvp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cek1j"]
+radius = 21.0
+height = 84.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isixt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dm8pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5ijto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1kpis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1jumd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rtlku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1xbbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3peur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qsl7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cy3xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c22ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jl2md")
+}],
+"loop": true,
+"name": &"death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_mywy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_47t2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xfemx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w5tv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r5ihd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5lfx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_otre3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xlqvp")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_egisk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 18)
+shape = SubResource("CapsuleShape2D_cek1j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_isixt")
+animation = &"run"

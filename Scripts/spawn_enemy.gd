@@ -3,7 +3,9 @@ extends Node
 @export var enemyCount:int #total number of  enemies in scene
 
 const enemyDoctor = preload("res://Scenes/Enemy.tscn")
+const enemyFly = preload("res://Scenes/EnemyFly.tscn")
 @export var numbers: Array[Vector2]
+@export var numbersFly: Array[Vector2]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(0,len(numbers)):
@@ -12,6 +14,13 @@ func _ready() -> void:
 		get_parent().add_child.call_deferred(enemyDoctorSpawn) #create in  the sccene
 		enemyDoctorSpawn.call_deferred("add_to_group", "enemies") #adding new spawn enemy in enemies group 
 		enemyDoctorSpawn.currentEnemyCount.connect(_on_enemy_current_enemy_count) #adding signal sent to spawner to reduce counnt of enemies 
+	
+	for i in range(0,len(numbersFly)):
+		var enemyFlySpawn =  enemyFly.instantiate() #initiate enemy scene
+		enemyFlySpawn.position = numbersFly[i] #position of enemy
+		get_parent().add_child.call_deferred(enemyFlySpawn) #create in  the sccene
+		enemyFlySpawn.call_deferred("add_to_group", "enemies") #adding new spawn enemy in enemies group 
+		enemyFlySpawn.currentEnemyCount.connect(_on_enemy_current_enemy_count) #adding signal sent to spawner to reduce counnt of enemies 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
