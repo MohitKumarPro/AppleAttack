@@ -1,44 +1,83 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
+const SPEED = 50.0
 const JUMP_VELOCITY = -400.0
-
+@onready var RayLine =  $RayCast2D
+@onready var RayLine2 =  $RayCast2D2
+@onready var RayLine3 =  $RayCast2D3
+@onready var RayLine4 =  $RayCast2D4
 @onready var animationEnemy = $AnimatedSprite2D
 @onready var AudioController = $"../AudioController"
-
+var direction
 signal currentEnemyCount
 var is_alive = true
-
+var firstray = true
+var secondray = true
+var fourthray = true
+var thirdray = true
+func _ready():
+	direction = -1
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
 	if is_alive:
 		animationEnemy.play("Walk")
+	if (!RayLine.is_colliding())  and  is_on_floor():
+		firstray = false
+		secondray = true
+		if direction !=1:
+			direction = 1
+		if animationEnemy.flip_h != true:
+			animationEnemy.flip_h = true
+			animationEnemy.position.x = animationEnemy.position.x-60
+		
 	
-		## Handle jump.
+	if (!RayLine2.is_colliding())  and  is_on_floor():
+		firstray = true
+		secondray = false
+		if direction !=-1:
+			direction = -1
+		if animationEnemy.flip_h != false:
+			animationEnemy.flip_h = false
+			animationEnemy.position.x = animationEnemy.position.x+60
+		
+			
+	
+	if (RayLine3.is_colliding())  and  is_on_floor():
+		thirdray = false
+		fourthray = true
+		if direction !=1:
+			direction = 1
+		if animationEnemy.flip_h != true:
+			animationEnemy.flip_h = true
+			animationEnemy.position.x = animationEnemy.position.x-60
+	
+	if (RayLine4.is_colliding())  and  is_on_floor():
+		thirdray = true
+		fourthray = false
+		if direction !=-1:
+			direction = -1
+		if animationEnemy.flip_h != false:
+			animationEnemy.flip_h = false
+			animationEnemy.position.x = animationEnemy.position.x+60
+	## Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
-#
 	## Get the input direction and handle the movement/deceleration.
 	## As good practice, you should replace UI actions with custom gameplay actions.
 	#var direction := Input.get_axis("ui_left", "ui_right")
-	#if direction:
-		#velocity.x = direction * SPEED
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	velocity.x = direction * SPEED
 	move_and_slide()
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	emit_signal("currentEnemyCount")
-	is_alive = false
-	AudioController.hitplay()
-	AudioController.diveplay()
-	animationEnemy.play("Death")
-	
+	if area.name=="Bullet":
+		is_alive = false
+		AudioController.hitplay()
+		AudioController.diveplay()
+		animationEnemy.play("Death")
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -46,5 +85,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		animationEnemy.stop()
 	if animationEnemy.animation == "Death":
 		animationEnemy.stop()
+		emit_signal("currentEnemyCount")
 		queue_free()
-	
