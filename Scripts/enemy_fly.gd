@@ -6,15 +6,17 @@ var direction = Vector2(-1,0)#-1
 var is_alive = true
 var is_attack = false
 @onready var animationEnemyFly = $AnimatedSprite2D
+
+
 func _physics_process(delta: float) -> void:
 	if is_alive:
 		#direction = Vector2(-1,0)
-		rotation_degrees = 0
+		#rotation_degrees = 0
 		animationEnemyFly.play("run")
 		velocity = direction * SPEED
 	if is_attack:
 		animationEnemyFly.play("Attack")
-		rotation_degrees = rad_to_deg(global_position.angle_to_point(global_position+direction)+180)
+		rotation_degrees = rad_to_deg(animationEnemyFly.global_position.angle_to_point(global_position+direction))
 		velocity = direction * 400
 	move_and_slide()
 
@@ -35,20 +37,23 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_attack_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Hero":
+	if body.name == "Hero1":
 		is_alive=false
 		is_attack = true
 		direction = (body.global_position-animationEnemyFly.global_position).normalized()
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		is_alive=true
 		is_attack = false
 	
-	if body.name != "Hero" and body.name != "Bullet":
+	#if body.name != "Hero" and body.name != "Bullet":
+	if body.name != "Bullet":
 		if animationEnemyFly.flip_h:
 			animationEnemyFly.flip_h = false
+			rotation_degrees =  0
 			direction = Vector2(-1,0)
 		else:
 			animationEnemyFly.flip_h = true
+			rotation_degrees =  360
 			direction = Vector2(1,0)
 	
 	
