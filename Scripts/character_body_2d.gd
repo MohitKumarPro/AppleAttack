@@ -43,7 +43,7 @@ var shoot_ready = true
 func _ready() -> void:
 	AudioController.back_play()
 	animationPlay.play("Ideal")
-	shoot_speed_timer.wait_time = 1.0/ shootSpeed
+	shoot_speed_timer.wait_time = 1.0/shootSpeed
 	line2.visible = false
 	emit_signal("applesCount",appleCount) #initialize count of  apple in canvas screenn
 

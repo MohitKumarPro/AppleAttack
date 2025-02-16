@@ -1,0 +1,142 @@
+[gd_scene load_steps=33 format=3 uid="uid://mn2ene0srau0"]
+
+[ext_resource type="Texture2D" uid="uid://7c72ax4y7kne" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile000.png" id="1_ox34g"]
+[ext_resource type="Script" path="res://Scripts/blades.gd" id="1_vjwtb"]
+[ext_resource type="Texture2D" uid="uid://bteieyovhvkla" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile001.png" id="2_rdkaj"]
+[ext_resource type="Texture2D" uid="uid://dgnvbc7ghm3kf" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile002.png" id="3_0cdfi"]
+[ext_resource type="Texture2D" uid="uid://ba8hef30rb5y3" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile003.png" id="4_tdy6o"]
+[ext_resource type="Texture2D" uid="uid://dk8dgcclxweno" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile004.png" id="5_3gewn"]
+[ext_resource type="Texture2D" uid="uid://0md318prqw6a" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile005.png" id="6_yxhno"]
+[ext_resource type="Texture2D" uid="uid://fwdnkulfow5d" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile006.png" id="7_s4oqc"]
+[ext_resource type="Texture2D" uid="uid://c5uo4xgttgnpc" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile007.png" id="8_q07xh"]
+[ext_resource type="Texture2D" uid="uid://bk4bdvj6x2jfc" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile008.png" id="9_8q1nk"]
+[ext_resource type="Texture2D" uid="uid://bcf5eooms1xro" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile009.png" id="10_tg54c"]
+[ext_resource type="Texture2D" uid="uid://ceqjdfxeybt3h" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile010.png" id="11_fa8hi"]
+[ext_resource type="Texture2D" uid="uid://bcugcu5sh2e6d" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile011.png" id="12_vmbmn"]
+[ext_resource type="Texture2D" uid="uid://ci8ws3rsygx85" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile012.png" id="13_odyg3"]
+[ext_resource type="Texture2D" uid="uid://ba6uwmasrn4kr" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile013.png" id="14_53ltj"]
+[ext_resource type="Texture2D" uid="uid://bowbwwhljltgf" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile014.png" id="15_rddkl"]
+[ext_resource type="Texture2D" uid="uid://okyblem7tpdx" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile015.png" id="16_ov4rn"]
+[ext_resource type="Texture2D" uid="uid://7oqqlto6ub64" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile016.png" id="17_jta71"]
+[ext_resource type="Texture2D" uid="uid://dd14prpgbrop3" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile017.png" id="18_atmtj"]
+[ext_resource type="Texture2D" uid="uid://ccfsb0hmjfb6g" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile018.png" id="19_p71el"]
+[ext_resource type="Texture2D" uid="uid://djvxbsem1rr8k" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile019.png" id="20_baws2"]
+[ext_resource type="Texture2D" uid="uid://byxbdvx3epr3r" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile020.png" id="21_ekb4t"]
+[ext_resource type="Texture2D" uid="uid://66gv1frx3b2a" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile021.png" id="22_nidyl"]
+[ext_resource type="Texture2D" uid="uid://b6fid7gynh31t" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile022.png" id="23_ej1ix"]
+[ext_resource type="Texture2D" uid="uid://f6s284mf7cjr" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile023.png" id="24_qiyb8"]
+[ext_resource type="Texture2D" uid="uid://chhp2svi5ak3y" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile024.png" id="25_ofy73"]
+[ext_resource type="Texture2D" uid="uid://c4ni2umcfjs6t" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile025.png" id="26_rw3t7"]
+[ext_resource type="Texture2D" uid="uid://cwd3t0i5ol2m6" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile026.png" id="27_e7j46"]
+[ext_resource type="Texture2D" uid="uid://bh27h4idkudj5" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile027.png" id="28_pkaak"]
+[ext_resource type="Texture2D" uid="uid://bh3vt7sqop1r5" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile028.png" id="29_dv5lg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e4ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ox34g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rdkaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0cdfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tdy6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3gewn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yxhno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s4oqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q07xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8q1nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tg54c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fa8hi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vmbmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_odyg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_53ltj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rddkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ov4rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jta71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_atmtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_p71el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_baws2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ekb4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_nidyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ej1ix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qiyb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ofy73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rw3t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_e7j46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pkaak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dv5lg")
+}],
+"loop": false,
+"name": &"blades",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8fck"]
+size = Vector2(26, 31)
+
+[node name="Blades" type="Area2D"]
+script = ExtResource("1_vjwtb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0e4ci")
+animation = &"blades"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_j8fck")

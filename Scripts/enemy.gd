@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50.0
+var SPEED = 50.0
 const JUMP_VELOCITY = -400.0
 @onready var RayLine =  $RayCast2D
 @onready var RayLine2 =  $RayCast2D2
@@ -24,6 +24,8 @@ func _physics_process(delta: float) -> void:
 
 	if is_alive:
 		animationEnemy.play("Walk")
+	var collider_RayLine3 = RayLine3.get_collider()
+	var collider_RayLine4 = RayLine4.get_collider()
 	if (!RayLine.is_colliding())  and  is_on_floor():
 		firstray = false
 		secondray = true
@@ -44,24 +46,25 @@ func _physics_process(delta: float) -> void:
 			animationEnemy.position.x = animationEnemy.position.x+60
 		
 			
+	if collider_RayLine3:
+		if (RayLine3.is_colliding())  and collider_RayLine3.name !="Blades" and  is_on_floor():
+			thirdray = false
+			fourthray = true
+			if direction !=1:
+				direction = 1
+			if animationEnemy.flip_h != true:
+				animationEnemy.flip_h = true
+				animationEnemy.position.x = animationEnemy.position.x-60
 	
-	if (RayLine3.is_colliding())  and  is_on_floor():
-		thirdray = false
-		fourthray = true
-		if direction !=1:
-			direction = 1
-		if animationEnemy.flip_h != true:
-			animationEnemy.flip_h = true
-			animationEnemy.position.x = animationEnemy.position.x-60
-	
-	if (RayLine4.is_colliding())  and  is_on_floor():
-		thirdray = true
-		fourthray = false
-		if direction !=-1:
-			direction = -1
-		if animationEnemy.flip_h != false:
-			animationEnemy.flip_h = false
-			animationEnemy.position.x = animationEnemy.position.x+60
+	if collider_RayLine4:
+		if (RayLine4.is_colliding())  and collider_RayLine4.name !="Blades"  and  is_on_floor():
+			thirdray = true
+			fourthray = false
+			if direction !=-1:
+				direction = -1
+			if animationEnemy.flip_h != false:
+				animationEnemy.flip_h = false
+				animationEnemy.position.x = animationEnemy.position.x+60
 	## Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
@@ -73,8 +76,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name=="Bullet":
+	if area.name=="Bullet" or area.name.contains("Blades"):
 		is_alive = false
+		SPEED = 0
 		AudioController.hitplay()
 		AudioController.diveplay()
 		animationEnemy.play("Death")
