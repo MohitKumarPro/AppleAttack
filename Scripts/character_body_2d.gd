@@ -37,7 +37,7 @@ var rotate_it = true
 var air_jump = false
 var ro_speed = 5
 var shoot_ready = true
-
+var alive=true
 
 
 func _ready() -> void:
@@ -60,102 +60,109 @@ func shoot():
 	
 	
 func _physics_process(delta: float) -> void:
+	if alive==true:
 	
-	
-	if not is_on_floor() and is_freez:
-		velocity += get_gravity()*0.5 * delta
-		
-	
-	if Input.is_action_pressed("ui_down") and !is_on_floor() and shoot_ready:
-		line2.visible = true
-		is_onfloor = false
-		is_jumping = false
-		is_falling = false
-		is_freez =  false
-		rotate_it = false
-		rotation += rotation_speed * delta
-		velocity.y=50
-	
-	if Input.is_action_just_released("ui_down") and !is_on_floor() and shoot_ready:
-		shoot_ready = false
-		line2.visible = false
-		air_jump = false
-		animationPlay.play("Attack")
-		await get_tree().create_timer(0.4).timeout
-		AudioController.attackplay()
-		shoot()
-		back_move = true
-		await get_tree().create_timer(0.5).timeout
-		back_move = false
-		shoot_ready = true
-		is_freez =  true
-		rotate_it = true
-		air_jump = true
-		appleCount = appleCount - 1 #reduce count of apple in each through
-		emit_signal("applesCount",appleCount) #emit signal to reduce count of apples in canvas screen 
-
-	if !is_on_floor() and rotate_it:
-		animationPlay.offset =Vector2(0,-25)
-		rotation += ro_speed * delta
-
-	if back_move:
-		emit_signal("moveBackPosition",position,rotation) ##send signal to mainscript to creat thrust in sky
-		move_and_collide(-1*(maker_2d.global_position-maker_2d2.global_position).normalized()*SPEED)
-		
-		
-		
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		is_onfloor = true
-		is_jumping = false
-		is_falling = false
-	# Handle jump start
-	if Input.is_action_just_pressed("ui_up") and is_on_floor() and is_onfloor:
-		is_onfloor = false
-		velocity.y = JUMP_VELOCITY
-		AudioController.jumpplay()
-		#animationPlayDust.visible =true
-		#animationPlayDust.play("dust")
-		#animationPlay.play("JumpUp")
-		emit_signal("jumpPositionBust",position) #send signal to mainscript to creat dust on ground
-		
-	if is_on_floor():
-		is_falling = true
-		line2.visible = false
-		is_freez = true
-		is_onfloor = true
-		is_onfloor = false
-		rotate_it = true
-		
-		
-	if is_falling and is_on_floor():
-		
-		while int(rotation) !=0:
-			await get_tree().create_timer(0.1).timeout
-			if int(rotation) <0:
-				rotation += 0.01
-			else:
-				rotation -= 0.01
-		rotation = 0
-		flame.visible = false
-		flame.stop()
-		animationPlay.play("JumpDown")
-
-	if air_jump and !is_on_floor():
-		animationPlay.play("JumpUp")
-	
-	# Transition to Idle when landing on the floor
-	if is_on_floor() and is_jumping:
-		animationPlay.play("Ideal")
+		if not is_on_floor() and is_freez:
+			velocity += get_gravity()*0.5 * delta
 			
-	if !is_on_floor():
-		flame.visible = true
-		flame.play()
-	
-	if appleCount <= 0:
-		if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
-			get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+		
+		if Input.is_action_pressed("ui_down") and !is_on_floor() and shoot_ready:
+			line2.visible = true
+			is_onfloor = false
+			is_jumping = false
+			is_falling = false
+			is_freez =  false
+			rotate_it = false
+			rotation += rotation_speed * delta
+			velocity.y=50
+		
+		if Input.is_action_just_released("ui_down") and !is_on_floor() and shoot_ready:
+			shoot_ready = false
+			line2.visible = false
+			air_jump = false
+			animationPlay.play("Attack")
+			await get_tree().create_timer(0.4).timeout
+			AudioController.attackplay()
+			shoot()
+			back_move = true
+			await get_tree().create_timer(0.5).timeout
+			back_move = false
+			shoot_ready = true
+			is_freez =  true
+			rotate_it = true
+			air_jump = true
+			appleCount = appleCount - 1 #reduce count of apple in each through
+			emit_signal("applesCount",appleCount) #emit signal to reduce count of apples in canvas screen 
 
-	move_and_slide()
+		if !is_on_floor() and rotate_it:
+			animationPlay.offset =Vector2(0,-25)
+			rotation += ro_speed * delta
+
+		if back_move:
+			emit_signal("moveBackPosition",position,rotation) ##send signal to mainscript to creat thrust in sky
+			move_and_collide(-1*(maker_2d.global_position-maker_2d2.global_position).normalized()*SPEED)
+			
+			
+			
+		if Input.is_action_just_pressed("ui_up") and is_on_floor():
+			is_onfloor = true
+			is_jumping = false
+			is_falling = false
+			
+		# Handle jump start
+		if Input.is_action_just_pressed("ui_up") and is_on_floor() and is_onfloor:
+			is_onfloor = false
+			velocity.y = JUMP_VELOCITY
+			AudioController.jumpplay()
+			#animationPlayDust.visible =true
+			#animationPlayDust.play("dust")
+			#animationPlay.play("JumpUp")
+			emit_signal("jumpPositionBust",position) #send signal to mainscript to creat dust on ground
+			
+			
+		if is_on_floor():
+			is_falling = true
+			line2.visible = false
+			is_freez = true
+			is_onfloor = true
+			is_onfloor = false
+			rotate_it = true
+			
+			
+		if is_falling and is_on_floor():
+			
+			while int(rotation) !=0:
+				await get_tree().create_timer(0.1).timeout
+				if int(rotation) <0:
+					rotation += 0.01
+				else:
+					rotation -= 0.01
+			rotation = 0
+			flame.visible = false
+			flame.stop()
+			animationPlay.play("JumpDown")
+
+		if air_jump and !is_on_floor():
+			animationPlay.play("JumpUp")
+		
+		# Transition to Idle when landing on the floor
+		if is_on_floor() and is_jumping:
+			animationPlay.play("Ideal")
+				
+		if !is_on_floor():
+			flame.visible = true
+			flame.play()
+		
+		if appleCount <= 0:
+			if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
+				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+		move_and_slide()
+				
+	if alive==false:
+		animationPlay.play("Death")
+		await get_tree().create_timer(10).timeout
+		alive =true
+	
 	
 	
 
@@ -188,7 +195,19 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			is_jumping = false
 			is_onfloor = false
 			air_jump = true
+	if animationPlay.animation == "Death":
+		animationPlay.stop()
+		if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
+			get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+		
 
 
 func _on_shoot_speed_timer_timeout() -> void:
 	canShoot=true
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name=="EnemyArea":
+		alive=false
+		
+		

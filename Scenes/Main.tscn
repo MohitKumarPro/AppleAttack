@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://hqubiqkp2wyl"]
+[gd_scene load_steps=36 format=4 uid="uid://hqubiqkp2wyl"]
 
 [ext_resource type="PackedScene" uid="uid://dfixe14iqokjg" path="res://Scenes/audio_controller.tscn" id="1_bsv0l"]
 [ext_resource type="Script" path="res://Scripts/Levelscene.gd" id="1_yn628"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://c6lkjgulcsmd" path="res://Assets/Hero/dust/FX052_02.png" id="11_m3ui1"]
 [ext_resource type="Texture2D" uid="uid://b1867fu8842jn" path="res://Assets/Hero/dust/FX052_03.png" id="12_ldmr5"]
 [ext_resource type="Texture2D" uid="uid://b4lphhakqns8o" path="res://Assets/UI/level.png" id="12_oexjh"]
-[ext_resource type="Texture2D" uid="uid://deb3ssw5k3q62" path="res://Assets/UI/tile.png" id="12_vhtty"]
 [ext_resource type="Texture2D" uid="uid://dsfm1f8f2hq85" path="res://Assets/Hero/dust/FX052_04.png" id="13_5eei2"]
 [ext_resource type="Texture2D" uid="uid://csql2pyb8fixi" path="res://Assets/UI/1.png" id="13_lyd3g"]
 [ext_resource type="Texture2D" uid="uid://0mklehah2l3n" path="res://Assets/Hero/BackThrust/FX033_01.png" id="14_14jj7"]
@@ -227,6 +226,12 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_sm8qm")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7p6f"]
+size = Vector2(20, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg57n"]
+size = Vector2(20, 25)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8dykw"]
 animations = [{
 "frames": [{
@@ -352,15 +357,17 @@ text = "100
 "
 
 [node name="TextureButtonJump" type="TouchScreenButton" parent="LevelCanvas"]
-position = Vector2(1369, 575)
-scale = Vector2(0.256667, 0.19)
-texture_normal = ExtResource("12_vhtty")
+visible = false
+position = Vector2(1169, 360)
+scale = Vector2(40, 29.572)
+shape = SubResource("RectangleShape2D_g7p6f")
 action = "ui_up"
 
 [node name="TextureButtonHit" type="TouchScreenButton" parent="LevelCanvas"]
-position = Vector2(56, 555)
-scale = Vector2(0.278333, 0.211667)
-texture_normal = ExtResource("12_vhtty")
+visible = false
+position = Vector2(359, 363)
+scale = Vector2(40, 30.504)
+shape = SubResource("RectangleShape2D_kg57n")
 action = "ui_down"
 
 [node name="TextureRectLevel" type="TextureRect" parent="LevelCanvas"]

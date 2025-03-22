@@ -10,6 +10,8 @@ var save_json = { #default json string when play first time
 		"status":1,
 	},
 }
+	
+	
 
 func add_json(Level, Stars, Status ,save_json): #can be called from anywhere to added level data in json
 	var hasItem = false
@@ -27,7 +29,9 @@ func add_json(Level, Stars, Status ,save_json): #can be called from anywhere to 
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	#saveGame(save_json)
+	#DirAccess.remove_absolute(path)
+	if !FileAccess.file_exists(path):
+		saveGame(save_json)
 	data = loadGame() #runs and load the game data 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

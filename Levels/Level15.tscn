@@ -146,9 +146,6 @@ tile_set = SubResource("TileSet_g4xy4")
 [node name="Enemy" parent="." index="4"]
 position = Vector2(1520, -303)
 
-[node name="MainUI" parent="." index="7"]
-visible = true
-
 [node name="TextureRectNbr2" type="TextureRect" parent="LevelCanvas" index="6"]
 offset_left = 1493.0
 offset_top = 8.0
@@ -156,12 +153,6 @@ offset_right = 1508.0
 offset_bottom = 37.0
 texture = ExtResource("3_endby")
 expand_mode = 1
-
-[node name="AnimatedSpriteDust" parent="." index="9"]
-visible = true
-
-[node name="AnimatedSpriteThrust" parent="." index="10"]
-visible = true
 
 [node name="SpawnEnemy" parent="." index="11"]
 enemyCount = 4

@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://bvq17hd7m2vqw"]
+[gd_scene load_steps=6 format=4 uid="uid://bvq17hd7m2vqw"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_ybrkc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpnl3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2crly"]
 
 [sub_resource type="Gradient" id="Gradient_gq4o0"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -29,6 +33,16 @@ appleCount = 15
 
 [node name="MainUI" parent="." index="6"]
 visible = false
+
+[node name="TextureButtonJump" parent="LevelCanvas" index="2"]
+position = Vector2(1173, 351)
+scale = Vector2(40, 36.336)
+shape = SubResource("RectangleShape2D_mpnl3")
+
+[node name="TextureButtonHit" parent="LevelCanvas" index="3"]
+position = Vector2(364, 346)
+scale = Vector2(40, 35.962)
+shape = SubResource("RectangleShape2D_2crly")
 
 [node name="SpawnEnemy" parent="." index="10"]
 numbers = Array[Vector2]([Vector2(212, 170), Vector2(1258, -291)])
