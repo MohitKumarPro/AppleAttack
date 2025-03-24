@@ -197,8 +197,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			air_jump = true
 	if animationPlay.animation == "Death":
 		animationPlay.stop()
-		if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
-			get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 		
 
 
@@ -207,7 +205,8 @@ func _on_shoot_speed_timer_timeout() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name=="EnemyArea":
+	print("-->",area.name)
+	if area.name=="EnemyArea" or area.name=="EnemyLady" or area.name == "EnemyAreaDoc":
 		alive=false
 		
 		
