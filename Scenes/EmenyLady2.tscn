@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://crnubu2y60536"]
+[gd_scene load_steps=24 format=3 uid="uid://crnubu2y60536"]
 
 [ext_resource type="Texture2D" uid="uid://d2vdjhcnt6kxe" path="res://Assets/enemy02/death/enemy02_death0001.png" id="1_dm8pf"]
 [ext_resource type="Script" path="res://Scripts/emeny_lady_2.gd" id="1_egisk"]
@@ -61,7 +61,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_jl2md")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 15.0
 }, {
@@ -95,6 +95,10 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jrnq3"]
+radius = 27.0
+height = 100.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_egisk")
 
@@ -104,4 +108,31 @@ shape = SubResource("CapsuleShape2D_cek1j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_isixt")
-animation = &"run"
+animation = &"death"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-25, -25)
+rotation = 0.436332
+target_position = Vector2(0, 130)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(-25, -25)
+rotation = -0.436332
+target_position = Vector2(0, 130)
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+position = Vector2(-25, 25)
+target_position = Vector2(-53, -1)
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+position = Vector2(-25, 25)
+target_position = Vector2(53, 0)
+
+[node name="EnemyLady" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyLady"]
+position = Vector2(-21, 14)
+shape = SubResource("CapsuleShape2D_jrnq3")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="EnemyLady" to="." method="_on_enemy_lady_area_entered"]

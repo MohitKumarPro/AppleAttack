@@ -4,7 +4,7 @@ extends Node2D
 @export var  thisLevelNbr :int
 var switch = []
 var t = 0
-@onready var blades = $Blades
+#@onready var blades = $Blades
 var json_string
 var json_result
 signal trigger_blades

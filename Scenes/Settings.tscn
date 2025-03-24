@@ -248,7 +248,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -271,8 +270,9 @@ offset_left = 442.456
 offset_top = 57.102
 offset_right = 1378.46
 offset_bottom = 598.102
-text = "Aim and Shoot: Use your button or touch controls  to
-                  aim the apple at the zombie doctor.
+text = "Aim and Shoot: Touch right side of the screen to jump
+          and left side to aim the apple at the zombie 
+                                            doctor.
 Hit to Clear: Successfully hit  the zombie doctors with 
                     the apples  to complete the level.
 Avoid Obstacles: Watch out for barriers and tricky 
