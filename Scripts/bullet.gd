@@ -21,6 +21,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.name=='AttackBack': #for EnemyDoc stop bullet to hit from front
+	if area.name=='AttackBack' or area.name=="Area2D": #for EnemyDoc stop bullet to hit from front
 		queue_free()
 		

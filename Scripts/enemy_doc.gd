@@ -9,6 +9,8 @@ const JUMP_VELOCITY = -400.0
 @onready var animationEnemy = $AnimatedSprite2D
 @onready var AudioController = $"../AudioController"
 @onready var collshape = $AttackBack/CollisionShape2D
+@onready var maker_2d2 = $Marker2D
+@onready var maker_2d = $Marker2D2
 const BULLET = preload("res://Scenes/bullet.tscn")
 var direction
 signal currentEnemyCount
@@ -17,6 +19,7 @@ var firstray = true
 var secondray = true
 var fourthray = true
 var thirdray = true
+var bulletDirection = Vector2(1,0)
 func _ready():
 	direction = -1
 func _physics_process(delta: float) -> void:
@@ -38,6 +41,8 @@ func _physics_process(delta: float) -> void:
 			animationEnemy.flip_h = true
 			animationEnemy.position.x = animationEnemy.position.x
 			collshape.position.x = collshape.position.x+80
+			maker_2d2.position.x = maker_2d2.position.x+140
+			maker_2d.position.x = maker_2d.position.x+150
 		
 	
 	if (!RayLine2.is_colliding())  and  is_on_floor():
@@ -49,6 +54,8 @@ func _physics_process(delta: float) -> void:
 			animationEnemy.flip_h = false
 			animationEnemy.position.x = animationEnemy.position.x
 			collshape.position.x = collshape.position.x-80
+			maker_2d2.position.x = maker_2d2.position.x-140
+			maker_2d.position.x = maker_2d.position.x-150
 			
 		
 			
@@ -62,6 +69,8 @@ func _physics_process(delta: float) -> void:
 				animationEnemy.flip_h = true
 				animationEnemy.position.x = animationEnemy.position.x
 				collshape.position.x = collshape.position.x+80
+				maker_2d2.position.x = maker_2d2.position.x+140
+				maker_2d.position.x = maker_2d.position.x+150
 				
 	if collider_RayLine4:
 		if (RayLine4.is_colliding())  and collider_RayLine4.name !="Blades"  and  is_on_floor():
@@ -73,6 +82,8 @@ func _physics_process(delta: float) -> void:
 				animationEnemy.flip_h = false
 				animationEnemy.position.x = animationEnemy.position.x
 				collshape.position.x = collshape.position.x-80
+				maker_2d2.position.x = maker_2d2.position.x-140
+				maker_2d.position.x = maker_2d.position.x-150
 				
 				
 	## Handle jump.
@@ -98,8 +109,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animationEnemy.animation == "attack":
-		animationEnemy.stop()
 		is_alive = true
+		animationEnemy.stop()
 	if animationEnemy.animation == "Walking":
 		animationEnemy.stop()
 	if animationEnemy.animation == "Death":
@@ -113,3 +124,9 @@ func _on_attack_back_area_entered(area: Area2D) -> void:
 		is_alive = false
 		animationEnemy.stop()
 		animationEnemy.play("attack")
+		await get_tree().create_timer(0.3).timeout
+		var bulletNode = BULLET.instantiate()
+		bulletDirection = (maker_2d.global_position-maker_2d2.global_position).normalized()
+		bulletNode.set_direction(bulletDirection)
+		get_tree().root.add_child(bulletNode)
+		bulletNode.global_position = maker_2d.global_position

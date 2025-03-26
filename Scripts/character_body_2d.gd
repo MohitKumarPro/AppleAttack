@@ -11,11 +11,11 @@ extends CharacterBody2D
 @onready var shoot_speed_timer = $shootSpeedTimer
 @onready var flame = $AnimatedSpriteFlame
 @onready var animationPlay = $AnimatedSprite2D
-
+var lifes = 5
 signal jumpPositionBust #send position to mainscreen gdscript for jump dust animation
 signal moveBackPosition #send position to mainscreen gdscript  for jump thrust animation
 signal applesCount #send the  number of apples available
-
+signal lifecount
 const BULLET = preload("res://Scenes/bullet.tscn")
 const JUMP_VELOCITY = -500.0
 const ATTACK_DURATION = 0.5  # Example duration for the attack animation
@@ -153,7 +153,7 @@ func _physics_process(delta: float) -> void:
 			flame.visible = true
 			flame.play()
 		
-		if appleCount <= 0:
+		if appleCount <= 0 or lifes<=0:
 			if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
 				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 		move_and_slide()
@@ -163,10 +163,6 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(10).timeout
 		alive =true
 	
-	
-	
-
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animationPlay.animation == "JumpDown":
 		is_falling = false
@@ -206,7 +202,9 @@ func _on_shoot_speed_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("-->",area.name)
-	if area.name=="EnemyArea" or area.name=="EnemyLady" or area.name == "EnemyAreaDoc":
+	if area.name=="EnemyArea" or area.name=="EnemyLady" or area.name == "EnemyAreaDoc" or area.name=="Bullet":
 		alive=false
+		lifes = lifes - 1
+		emit_signal("lifecount",lifes)
 		
 		
