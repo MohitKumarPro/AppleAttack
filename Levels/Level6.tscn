@@ -37,7 +37,7 @@ texture = ExtResource("2_lisun")
 [node name="SpawnEnemy" parent="." index="10"]
 enemyCount = 4
 numbers = Array[Vector2]([Vector2(1218, 340)])
-numbersDoc = Array[Vector2]([Vector2(527, -90), Vector2(15, -60)])
+numbersDoc = Array[Vector2]([Vector2(920, 377), Vector2(15, -60)])
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="11"]
 position = Vector2(-105, 200)

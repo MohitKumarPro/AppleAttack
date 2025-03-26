@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://hqubiqkp2wyl"]
+[gd_scene load_steps=37 format=4 uid="uid://hqubiqkp2wyl"]
 
 [ext_resource type="PackedScene" uid="uid://dfixe14iqokjg" path="res://Scenes/audio_controller.tscn" id="1_bsv0l"]
 [ext_resource type="Script" path="res://Scripts/Levelscene.gd" id="1_yn628"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cvoqyj464d06h" path="res://Assets/UI/pause.png" id="10_bphi4"]
 [ext_resource type="Texture2D" uid="uid://bnb4366k10w56" path="res://Assets/Hero/dust/FX052_01.png" id="10_o5pcy"]
 [ext_resource type="Texture2D" uid="uid://c6lkjgulcsmd" path="res://Assets/Hero/dust/FX052_02.png" id="11_m3ui1"]
+[ext_resource type="Texture2D" uid="uid://dd0v4ysvy8m8h" path="res://Assets/props/prop_health02.png" id="11_upe50"]
 [ext_resource type="Texture2D" uid="uid://b1867fu8842jn" path="res://Assets/Hero/dust/FX052_03.png" id="12_ldmr5"]
 [ext_resource type="Texture2D" uid="uid://b4lphhakqns8o" path="res://Assets/UI/level.png" id="12_oexjh"]
 [ext_resource type="Texture2D" uid="uid://dsfm1f8f2hq85" path="res://Assets/Hero/dust/FX052_04.png" id="13_5eei2"]
@@ -325,6 +326,7 @@ position_smoothing_speed = 3.0
 script = ExtResource("4_2tqm3")
 
 [node name="MainUI" parent="." instance=ExtResource("8_8r0n5")]
+visible = false
 
 [node name="LevelCanvas" type="CanvasLayer" parent="."]
 script = ExtResource("9_0gg3t")
@@ -356,15 +358,32 @@ text = "100
 
 "
 
+[node name="TextureRectLife" type="TextureRect" parent="LevelCanvas"]
+offset_left = 160.0
+offset_top = 10.0
+offset_right = 225.0
+offset_bottom = 65.0
+texture = ExtResource("11_upe50")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="LevelCanvas/TextureRectLife"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 52.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.0140606, 4.73461e-05, 5.56418e-05, 1)
+theme_override_font_sizes/font_size = 18
+text = "5
+"
+
 [node name="TextureButtonJump" type="TouchScreenButton" parent="LevelCanvas"]
-visible = false
 position = Vector2(1169, 360)
 scale = Vector2(40, 29.572)
 shape = SubResource("RectangleShape2D_g7p6f")
 action = "ui_up"
 
 [node name="TextureButtonHit" type="TouchScreenButton" parent="LevelCanvas"]
-visible = false
 position = Vector2(359, 363)
 scale = Vector2(40, 30.504)
 shape = SubResource("RectangleShape2D_kg57n")
@@ -407,6 +426,7 @@ enemyCount = 3
 [connection signal="currentEnemyCount" from="Enemy" to="SpawnEnemy" method="_on_enemy_current_enemy_count"]
 [connection signal="applesCount" from="Hero" to="LevelCanvas" method="_on_hero_apples_count"]
 [connection signal="jumpPositionBust" from="Hero" to="." method="_on_hero_jump_position_bust"]
+[connection signal="lifecount" from="Hero" to="LevelCanvas" method="_on_hero_lifecount"]
 [connection signal="moveBackPosition" from="Hero" to="." method="_on_hero_move_back_position"]
 [connection signal="pressed" from="LevelCanvas/MenuButton" to="MainUI" method="_on_menu_button_pressed"]
 [connection signal="animation_finished" from="AnimatedSpriteDust" to="." method="_on_animated_sprite_dust_animation_finished"]
