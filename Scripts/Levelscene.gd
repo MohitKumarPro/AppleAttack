@@ -2,6 +2,7 @@ extends Node2D
 @onready var createDust = $AnimatedSpriteDust
 @onready var createThrust = $AnimatedSpriteThrust
 @export var  thisLevelNbr :int
+@onready var positionHero = $Hero
 var switch = []
 var t = 0
 #@onready var blades = $Blades
@@ -75,7 +76,9 @@ func read_json_elements(data, prefix: String = ""):
 		print(prefix.trim_suffix("."), ":", data)
 
 func _process(delta: float) -> void:
-	pass
+	if positionHero.position.y > 900:
+		if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
+				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn") 
 
 func _on_hero_jump_position_bust(position1) -> void: #signal connect from hero scene for jump dust animation
 	createDust.position.x = position1.x

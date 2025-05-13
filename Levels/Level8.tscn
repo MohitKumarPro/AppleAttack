@@ -24,6 +24,9 @@ tile_map_data = PackedByteArray("AAArABUAAAADAAAAAAAqABUAAAABAAAAAAApABUAAAACAAA
 [node name="Enemy" parent="." index="3"]
 position = Vector2(1278, 163)
 
+[node name="Hero" parent="." index="4"]
+appleCount = 30
+
 [node name="TextureRectNbr" parent="LevelCanvas" index="6"]
 texture = ExtResource("2_gyb6k")
 
