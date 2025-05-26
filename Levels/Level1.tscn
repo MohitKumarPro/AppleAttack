@@ -31,15 +31,12 @@ position = Vector2(1158, 281)
 position = Vector2(273, -28)
 appleCount = 15
 
-[node name="MainUI" parent="." index="6"]
-visible = false
-
-[node name="TextureButtonJump" parent="LevelCanvas" index="2"]
+[node name="TextureButtonJump" parent="LevelCanvas" index="3"]
 position = Vector2(1173, 351)
 scale = Vector2(40, 36.336)
 shape = SubResource("RectangleShape2D_mpnl3")
 
-[node name="TextureButtonHit" parent="LevelCanvas" index="3"]
+[node name="TextureButtonHit" parent="LevelCanvas" index="4"]
 position = Vector2(364, 346)
 scale = Vector2(40, 35.962)
 shape = SubResource("RectangleShape2D_2crly")
