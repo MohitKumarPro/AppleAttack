@@ -24,10 +24,7 @@ tile_map_data = PackedByteArray("AAAzABUAAAABAAIAAAAyABUAAAACAAIAAAAxABUAAAACAAI
 [node name="Hero" parent="." index="4"]
 appleCount = 12
 
-[node name="MainUI" parent="." index="6"]
-visible = false
-
-[node name="TextureRectNbr" parent="LevelCanvas" index="5"]
+[node name="TextureRectNbr" parent="LevelCanvas" index="6"]
 texture = ExtResource("2_6bvf2")
 
 [node name="SpawnEnemy" parent="." index="10"]

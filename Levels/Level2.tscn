@@ -24,15 +24,14 @@ tile_map_data = PackedByteArray("AAAzABUAAAADAAIAAAAyABUAAAABAAIAAAAxABUAAAABAAI
 [node name="Hero" parent="." index="4"]
 appleCount = 20
 
-[node name="MainUI" parent="." index="6"]
-visible = false
-
-[node name="TextureRectNbr" parent="LevelCanvas" index="5"]
+[node name="TextureRectNbr" parent="LevelCanvas" index="6"]
 texture = ExtResource("2_cbcj0")
 
 [node name="SpawnEnemy" parent="." index="10"]
-enemyCount = 5
-numbers = Array[Vector2]([Vector2(1480, 280), Vector2(1070, 370), Vector2(210, 180), Vector2(-85, 283)])
+enemyCount = 6
+numbersFly = Array[Vector2]([Vector2(35, -270)])
+numbersLady = Array[Vector2]([Vector2(180, 190), Vector2(424, 530)])
+numbersDoc = Array[Vector2]([Vector2(1580, 280), Vector2(1040, 360)])
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="11"]
 position = Vector2(312, 487)
