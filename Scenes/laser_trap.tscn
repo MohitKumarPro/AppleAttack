@@ -1,0 +1,68 @@
+[gd_scene load_steps=15 format=3 uid="uid://cyufubwmuuwyp"]
+
+[ext_resource type="Texture2D" uid="uid://dxsqfccdrak51" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile000.png" id="1_5pkex"]
+[ext_resource type="Script" path="res://Scripts/laser_trap.gd" id="1_cjf7d"]
+[ext_resource type="Texture2D" uid="uid://n5tno4ksdo2x" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile001.png" id="2_snfqj"]
+[ext_resource type="Texture2D" uid="uid://vmwkilvegay1" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile002.png" id="3_y8fbl"]
+[ext_resource type="Texture2D" uid="uid://bga6t668ite0p" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile003.png" id="4_flvhq"]
+[ext_resource type="Texture2D" uid="uid://csv3ijcdpfxvo" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile004.png" id="5_5fc6w"]
+[ext_resource type="Texture2D" uid="uid://u5ln2ltnyxqu" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile005.png" id="6_hjlt8"]
+[ext_resource type="Texture2D" uid="uid://bupcehjni1rbn" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile006.png" id="7_tgevv"]
+[ext_resource type="Texture2D" uid="uid://pjrhnebkhss2" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile007.png" id="8_ltwtb"]
+[ext_resource type="Texture2D" uid="uid://3ha2qdsxh82h" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile008.png" id="9_sid1c"]
+[ext_resource type="Texture2D" uid="uid://cqmcckfvid81l" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile009.png" id="10_nrsn7"]
+[ext_resource type="Texture2D" uid="uid://cbohugftq5tix" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile010.png" id="11_kwf3c"]
+[ext_resource type="Texture2D" uid="uid://cloklwpispa1l" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_activate/tile011.png" id="12_pwqe8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6i8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5pkex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_snfqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y8fbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_flvhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5fc6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hjlt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tgevv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ltwtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sid1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nrsn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kwf3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pwqe8")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[node name="laserTrap" type="Node2D"]
+script = ExtResource("1_cjf7d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_w6i8y")
+animation = &"fire"
