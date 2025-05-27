@@ -1,0 +1,128 @@
+[gd_scene load_steps=28 format=3 uid="uid://b41bjp5exqdvq"]
+
+[ext_resource type="Script" path="res://Scripts/gun_trap.gd" id="1_jr4n2"]
+[ext_resource type="Texture2D" uid="uid://do7hr6a1qiepo" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile000.png" id="2_7c6p0"]
+[ext_resource type="Texture2D" uid="uid://b0kxrvbwpphf6" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile001.png" id="3_x2krr"]
+[ext_resource type="Texture2D" uid="uid://cmi1jlm4ob60x" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile002.png" id="4_xt0mm"]
+[ext_resource type="Texture2D" uid="uid://1xdyqlcltyhw" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile003.png" id="5_xpcuk"]
+[ext_resource type="Texture2D" uid="uid://c6hdl3io7wlig" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile004.png" id="6_745bs"]
+[ext_resource type="Texture2D" uid="uid://csivef3sxq7j3" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile005.png" id="7_7onba"]
+[ext_resource type="Texture2D" uid="uid://c0ihi704vyr2r" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile006.png" id="8_ioun5"]
+[ext_resource type="Texture2D" uid="uid://b43kn85gwl11g" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile007.png" id="9_uduub"]
+[ext_resource type="Texture2D" uid="uid://dsa2mwwql8xk1" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile008.png" id="10_okkcj"]
+[ext_resource type="Texture2D" uid="uid://uq3lnvjnibh5" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile009.png" id="11_xsm8y"]
+[ext_resource type="Texture2D" uid="uid://baayobktixlrp" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile010.png" id="12_264lr"]
+[ext_resource type="Texture2D" uid="uid://dcl210gdnmtfq" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile011.png" id="13_eu6rp"]
+[ext_resource type="Texture2D" uid="uid://ccccu5636xkiu" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile012.png" id="14_ouccj"]
+[ext_resource type="Texture2D" uid="uid://cr0yp52p6xr11" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile013.png" id="15_klbxf"]
+[ext_resource type="Texture2D" uid="uid://c3n0dqe2km6s4" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile014.png" id="16_4pqtu"]
+[ext_resource type="Texture2D" uid="uid://cc8b2xlgn6rqe" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile015.png" id="17_7itlh"]
+[ext_resource type="Texture2D" uid="uid://bp55038o6hugt" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile016.png" id="18_q864x"]
+[ext_resource type="Texture2D" uid="uid://680u7qjw6c88" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile017.png" id="19_jgw2l"]
+[ext_resource type="Texture2D" uid="uid://kl01jldxinnf" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile018.png" id="20_bhhuv"]
+[ext_resource type="Texture2D" uid="uid://bqcv5tv1onfxi" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile019.png" id="21_va6sg"]
+[ext_resource type="Texture2D" uid="uid://cpg8jhkjac24h" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile020.png" id="22_3geg8"]
+[ext_resource type="Texture2D" uid="uid://c5hw8g0lco2w5" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile021.png" id="23_37m0e"]
+[ext_resource type="Texture2D" uid="uid://bvmko5dplunmc" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile022.png" id="24_ng31q"]
+[ext_resource type="Texture2D" uid="uid://bchp6ewhb1blf" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile023.png" id="25_g0whk"]
+[ext_resource type="Texture2D" uid="uid://cg0gtnoe7psrf" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile024.png" id="26_81rbr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcft1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7c6p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x2krr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xt0mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xpcuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_745bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7onba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ioun5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uduub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_okkcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xsm8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_264lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_eu6rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ouccj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_klbxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4pqtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7itlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q864x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jgw2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bhhuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_va6sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3geg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_37m0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ng31q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_g0whk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_81rbr")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 15.0
+}]
+
+[node name="GunTrap" type="Node2D"]
+script = ExtResource("1_jr4n2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_tcft1")
+animation = &"fire"
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(1.66667, -3.33333)
+scale = Vector2(0.666667, 0.666667)
+target_position = Vector2(-400, 0)
+collide_with_areas = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
