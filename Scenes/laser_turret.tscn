@@ -1,0 +1,97 @@
+[gd_scene load_steps=20 format=3 uid="uid://few2itfvceep"]
+
+[ext_resource type="Texture2D" uid="uid://cphbhthckohyc" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile000.png" id="1_2ii0i"]
+[ext_resource type="Script" path="res://Scripts/laser_turret.gd" id="1_48hp1"]
+[ext_resource type="Texture2D" uid="uid://bjgwueo6a3846" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile001.png" id="2_iedc7"]
+[ext_resource type="Texture2D" uid="uid://1nrtp82enk6b" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile002.png" id="3_ka4g0"]
+[ext_resource type="Texture2D" uid="uid://dx8j48401aj1j" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile003.png" id="4_c4vwt"]
+[ext_resource type="Texture2D" uid="uid://dwc3y1ixd36e" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile004.png" id="5_j24y4"]
+[ext_resource type="Texture2D" uid="uid://baik5nq01fx0a" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile005.png" id="6_fmltg"]
+[ext_resource type="Texture2D" uid="uid://bqdlogrf8l06i" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile006.png" id="7_f5iex"]
+[ext_resource type="Texture2D" uid="uid://drdxsoo1pesd7" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile007.png" id="8_t1du4"]
+[ext_resource type="Texture2D" uid="uid://dyt87yoxjn7vk" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile008.png" id="9_f1rr4"]
+[ext_resource type="Texture2D" uid="uid://b0187gld6tnkq" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile009.png" id="10_rjtwu"]
+[ext_resource type="Texture2D" uid="uid://bm6eokku16x3q" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile010.png" id="11_olg35"]
+[ext_resource type="Texture2D" uid="uid://owm6667jpknp" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile011.png" id="12_6t2dw"]
+[ext_resource type="Texture2D" uid="uid://df0mgwp7secb" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile012.png" id="13_1f144"]
+[ext_resource type="Texture2D" uid="uid://cbfygh2b1a78o" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile013.png" id="14_wakmf"]
+[ext_resource type="Texture2D" uid="uid://mn5ym3hbff18" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile014.png" id="15_yncad"]
+[ext_resource type="Texture2D" uid="uid://b8d71o3uf6tya" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile015.png" id="16_imrwo"]
+[ext_resource type="Texture2D" uid="uid://bd2of5stdhg3v" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile016.png" id="17_sw5ys"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xtuum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_sw5ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2ii0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iedc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ka4g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c4vwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j24y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fmltg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f5iex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t1du4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f1rr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rjtwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_olg35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6t2dw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1f144")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wakmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yncad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_imrwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sw5ys")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[node name="laserTurret" type="Node2D"]
+script = ExtResource("1_48hp1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xtuum")
+animation = &"fire"
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(0, -400)
+collide_with_areas = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

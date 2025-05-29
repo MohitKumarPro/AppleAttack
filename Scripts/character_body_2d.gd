@@ -39,6 +39,7 @@ var ro_speed = 5
 var shoot_ready = true
 var alive=true
 
+var enable_button = true
 
 func _ready() -> void:
 	AudioController.back_play()
@@ -67,6 +68,7 @@ func _physics_process(delta: float) -> void:
 			
 		
 		if Input.is_action_pressed("ui_down") and !is_on_floor() and shoot_ready:
+			enable_button = true
 			line2.visible = true
 			is_onfloor = false
 			is_jumping = false
@@ -77,7 +79,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y=50
 		
 		if Input.is_action_just_released("ui_down") and !is_on_floor() and shoot_ready:
-			shoot_ready = false
 			line2.visible = false
 			air_jump = false
 			animationPlay.play("Attack")
@@ -159,10 +160,16 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 				
 	if alive==false:
-		animationPlay.play("Death")
-		await get_tree().create_timer(10).timeout
-		alive =true
-	
+		pass
+func death():
+	if appleCount <= 0 or lifes<=0:
+			if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
+				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+				alive =false
+				return
+	animationPlay.play("Death")
+	await get_tree().create_timer(10).timeout
+	alive =true
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animationPlay.animation == "JumpDown":
 		is_falling = false
@@ -202,9 +209,11 @@ func _on_shoot_speed_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("-->",area.name)
-	if area.name=="EnemyArea" or area.name=="EnemyLady" or area.name == "EnemyAreaDoc" or area.name=="Bullet":
+	if area.name=="EnemyArea" or area.name=="EnemyLady" or area.name == "EnemyAreaDoc" or area.name=="Bullet" \
+	or area.name=="laserTrapArea" or area.name=="bladesRunArea" or area.name=="sawRunArea":
 		alive=false
 		lifes = lifes - 1
+		death()
 		emit_signal("lifecount",lifes)
 		
 		
