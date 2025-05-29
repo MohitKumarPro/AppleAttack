@@ -100,9 +100,9 @@ pivot_offset = Vector2(275, 65)
 texture = ExtResource("2_tgycn")
 
 [node name="TextureButtonMenu" type="TextureButton" parent="."]
-offset_left = 489.0
+offset_left = 492.0
 offset_top = 459.0
-offset_right = 639.0
+offset_right = 642.0
 offset_bottom = 634.0
 texture_normal = ExtResource("3_bm1mg")
 ignore_texture_size = true

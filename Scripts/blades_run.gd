@@ -1,4 +1,5 @@
 extends Node2D
+
 @onready var laserAni = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
@@ -13,10 +14,11 @@ func play_every_10_seconds() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if laserAni.frame >= 3 and laserAni.frame <= 17:
-		$laserTrapArea/CollisionShape2D.disabled = false
+	
+	if laserAni.frame >= 12 and laserAni.frame <= 27:
+		$bladesRunArea/CollisionShape2D.disabled = false
 	else:
-		$laserTrapArea/CollisionShape2D.disabled = true
+		$bladesRunArea/CollisionShape2D.disabled = true
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

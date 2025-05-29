@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	if gunAniRay.is_colliding():
 		if gunAniRay:
 			if gunAniRay.get_collider().name == "Area2D":
+				print("thisis")
 				run_gun()
 
 func run_gun():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://mn2ene0srau0"]
+[gd_scene load_steps=32 format=3 uid="uid://mn2ene0srau0"]
 
 [ext_resource type="Texture2D" uid="uid://7c72ax4y7kne" path="res://Assets/DoctorLab/Traps/Individual_PNGs/wall_blades/tile000.png" id="1_ox34g"]
 [ext_resource type="Script" path="res://Scripts/blades.gd" id="1_vjwtb"]
@@ -126,9 +126,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8fck"]
-size = Vector2(26, 31)
-
 [node name="Blades" type="Area2D"]
 script = ExtResource("1_vjwtb")
 
@@ -136,7 +133,3 @@ script = ExtResource("1_vjwtb")
 sprite_frames = SubResource("SpriteFrames_0e4ci")
 animation = &"blades"
 frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_j8fck")
