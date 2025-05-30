@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfixe14iqokjg"]
+[gd_scene load_steps=11 format=3 uid="uid://dfixe14iqokjg"]
 
 [ext_resource type="Script" path="res://Scripts/audio_controller.gd" id="1_hyfuy"]
 [ext_resource type="AudioStream" uid="uid://kwemskf4w5h4" path="res://Assets/Music/Rest for the wicked.mp3" id="2_nj17t"]
@@ -6,6 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://ju1njdbic5k4" path="res://Assets/Music/25_Wind_01.wav" id="4_vpp26"]
 [ext_resource type="AudioStream" uid="uid://bmwt5h7ywdyur" path="res://Assets/Music/61_Hit_03.wav" id="5_w7trk"]
 [ext_resource type="AudioStream" uid="uid://cx1elcuimypr0" path="res://Assets/Music/52_Dive_02.wav" id="6_0feci"]
+[ext_resource type="AudioStream" uid="uid://c8m1g8og84tgu" path="res://Assets/Music/engine_heavy_loop.ogg" id="7_s60jp"]
+[ext_resource type="AudioStream" uid="uid://d0io27ai0q8ea" path="res://Assets/Music/lasergun.ogg" id="8_227u3"]
+[ext_resource type="AudioStream" uid="uid://djb0fmgbhk33w" path="res://Assets/Music/water_pistol.ogg" id="9_bo7ab"]
+[ext_resource type="AudioStream" uid="uid://p3fmqpb87dxb" path="res://Assets/Music/22_Slash_04.wav" id="10_s4i0p"]
 
 [node name="AudioController" type="Node2D"]
 script = ExtResource("1_hyfuy")
@@ -25,3 +29,15 @@ stream = ExtResource("5_w7trk")
 
 [node name="dive" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_0feci")
+
+[node name="saw_run_play" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_s60jp")
+
+[node name="laser_gun_play" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_227u3")
+
+[node name="spikes_gun_play" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_bo7ab")
+
+[node name="blades_play" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_s4i0p")

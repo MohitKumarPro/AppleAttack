@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b41bjp5exqdvq"]
+[gd_scene load_steps=29 format=3 uid="uid://b41bjp5exqdvq"]
 
 [ext_resource type="Script" path="res://Scripts/gun_trap.gd" id="1_jr4n2"]
 [ext_resource type="Texture2D" uid="uid://do7hr6a1qiepo" path="res://Assets/DoctorLab/Traps/Individual_PNGs/electric_turret/tile000.png" id="2_7c6p0"]
@@ -110,6 +110,9 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22opx"]
+size = Vector2(1012, 13)
+
 [node name="GunTrap" type="Node2D"]
 script = ExtResource("1_jr4n2")
 
@@ -124,5 +127,17 @@ position = Vector2(1.66667, -3.33333)
 scale = Vector2(0.666667, 0.666667)
 target_position = Vector2(-400, 0)
 collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, -10)
+points = PackedVector2Array(0, 0, -1000, 0)
+width = 7.0
+default_color = Color(0.709804, 0.223529, 0.164706, 1)
+
+[node name="GunTrapArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GunTrapArea"]
+position = Vector2(-496, -11)
+shape = SubResource("RectangleShape2D_22opx")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

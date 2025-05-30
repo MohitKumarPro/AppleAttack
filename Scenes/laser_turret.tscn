@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://few2itfvceep"]
+[gd_scene load_steps=21 format=3 uid="uid://few2itfvceep"]
 
 [ext_resource type="Texture2D" uid="uid://cphbhthckohyc" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_turret/tile000.png" id="1_2ii0i"]
 [ext_resource type="Script" path="res://Scripts/laser_turret.gd" id="1_48hp1"]
@@ -81,6 +81,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jp66"]
+size = Vector2(7, 975)
+
 [node name="laserTurret" type="Node2D"]
 script = ExtResource("1_48hp1")
 
@@ -91,7 +94,18 @@ sprite_frames = SubResource("SpriteFrames_xtuum")
 animation = &"fire"
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
-target_position = Vector2(0, -400)
+target_position = Vector2(0, -500)
 collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, -25, 0, -1000)
+width = 7.0
+default_color = Color(0.709804, 0.223529, 0.164706, 1)
+
+[node name="laserTurretArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laserTurretArea"]
+position = Vector2(-0.5, -512.5)
+shape = SubResource("RectangleShape2D_1jp66")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
