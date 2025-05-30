@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var laserAni = $AnimatedSprite2D
-
+@onready var AudioController = $"../AudioController"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	play_every_10_seconds()
@@ -16,6 +16,7 @@ func play_every_10_seconds() -> void:
 func _process(delta: float) -> void:
 	
 	if laserAni.frame >= 12 and laserAni.frame <= 27:
+		AudioController.blades_play()
 		$bladesRunArea/CollisionShape2D.disabled = false
 	else:
 		$bladesRunArea/CollisionShape2D.disabled = true

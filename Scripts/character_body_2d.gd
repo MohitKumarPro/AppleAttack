@@ -210,9 +210,11 @@ func _on_shoot_speed_timer_timeout() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("-->",area.name)
 	if area.name=="EnemyArea" or area.name=="EnemyLady" or area.name == "EnemyAreaDoc" or area.name=="Bullet" \
-	or area.name=="laserTrapArea" or area.name=="bladesRunArea" or area.name=="sawRunArea":
-		alive=false
+	or area.name=="laserTrapArea" or area.name=="bladesRunArea" or area.name=="sawRunArea" or area.name=="laserSpikesArea"\
+	or area.name=="GunTrapArea" or area.name=="laserTurretArea":
 		lifes = lifes - 1
+		if lifes<=0:
+			alive=false
 		death()
 		emit_signal("lifecount",lifes)
 		

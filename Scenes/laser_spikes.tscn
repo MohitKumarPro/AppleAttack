@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4rxsngw1n138"]
+[gd_scene load_steps=14 format=3 uid="uid://4rxsngw1n138"]
 
 [ext_resource type="Script" path="res://Scripts/laser_spikes.gd" id="1_0qu2f"]
 [ext_resource type="Texture2D" uid="uid://k3jwccb0buna" path="res://Assets/DoctorLab/Traps/Individual_PNGs/laser_spikes_activate/tile000.png" id="1_4qgt5"]
@@ -68,6 +68,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gpe4u"]
+radius = 50.9902
+
 [node name="laserSpikes" type="Node2D"]
 script = ExtResource("1_0qu2f")
 
@@ -76,5 +79,11 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_4u7f1")
 animation = &"fire"
+
+[node name="laserSpikesArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laserSpikesArea"]
+position = Vector2(1, 29)
+shape = SubResource("CircleShape2D_gpe4u")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
