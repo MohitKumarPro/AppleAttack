@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://dsywganbb3icq"]
+[gd_scene load_steps=7 format=4 uid="uid://dsywganbb3icq"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_7l5ec"]
 [ext_resource type="Texture2D" uid="uid://bsahinddq6jd3" path="res://Assets/UI/8.png" id="2_gyb6k"]
+[ext_resource type="PackedScene" uid="uid://few2itfvceep" path="res://Scenes/laser_turret.tscn" id="3_03fr0"]
+[ext_resource type="PackedScene" uid="uid://4rxsngw1n138" path="res://Scenes/laser_spikes.tscn" id="4_ifqtl"]
 
 [sub_resource type="Gradient" id="Gradient_uxq3u"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -25,7 +27,7 @@ tile_map_data = PackedByteArray("AAArABUAAAADAAAAAAAqABUAAAABAAAAAAApABUAAAACAAA
 position = Vector2(1278, 163)
 
 [node name="Hero" parent="." index="4"]
-appleCount = 30
+appleCount = 35
 
 [node name="TextureRectNbr" parent="LevelCanvas" index="6"]
 texture = ExtResource("2_gyb6k")
@@ -79,3 +81,21 @@ offset_left = 1586.0
 offset_top = 258.0
 offset_right = 1596.0
 offset_bottom = 268.0
+
+[node name="laserTurret" parent="." index="19" instance=ExtResource("3_03fr0")]
+position = Vector2(197, 130)
+
+[node name="laserSpikes" parent="." index="20" instance=ExtResource("4_ifqtl")]
+position = Vector2(1365, 608)
+
+[node name="laserSpikes2" parent="." index="21" instance=ExtResource("4_ifqtl")]
+position = Vector2(1266, 607)
+
+[node name="laserSpikes3" parent="." index="22" instance=ExtResource("4_ifqtl")]
+position = Vector2(1171, 607)
+
+[node name="laserSpikes4" parent="." index="23" instance=ExtResource("4_ifqtl")]
+position = Vector2(1304, 287)
+
+[node name="laserSpikes5" parent="." index="24" instance=ExtResource("4_ifqtl")]
+position = Vector2(1209, 287)
