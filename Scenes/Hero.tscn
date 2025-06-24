@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dwjnvrmqbyn8p"]
+[gd_scene load_steps=65 format=3 uid="uid://dwjnvrmqbyn8p"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_b7iv7"]
 [ext_resource type="Texture2D" uid="uid://dvokhy8upk11q" path="res://Assets/Hero/attack/hero_attack0017.png" id="2_hgodm"]
@@ -46,6 +46,14 @@
 [ext_resource type="Texture2D" uid="uid://bicfi5k1rrtm1" path="res://Assets/Hero/death/hero_death0017.png" id="30_bqn8r"]
 [ext_resource type="Texture2D" uid="uid://cbfibwih7yla3" path="res://Assets/Hero/death/hero_death0018.png" id="31_fy3jj"]
 [ext_resource type="Texture2D" uid="uid://df0y0u8x3cjis" path="res://Assets/Hero/death/hero_death0019.png" id="32_ufdhk"]
+[ext_resource type="Texture2D" uid="uid://bgdildfb13dl2" path="res://Assets/Hero/run/hero_run0001.png" id="47_5cjoi"]
+[ext_resource type="Texture2D" uid="uid://cmqqer2tlx5bd" path="res://Assets/Hero/run/hero_run0002.png" id="48_nywps"]
+[ext_resource type="Texture2D" uid="uid://b73lrmvoauq0k" path="res://Assets/Hero/run/hero_run0003.png" id="49_yvn4e"]
+[ext_resource type="Texture2D" uid="uid://5stkndpfidh5" path="res://Assets/Hero/run/hero_run0004.png" id="50_0us7p"]
+[ext_resource type="Texture2D" uid="uid://near8r30s6og" path="res://Assets/Hero/run/hero_run0005.png" id="51_0uql1"]
+[ext_resource type="Texture2D" uid="uid://bq3wqh12ofvta" path="res://Assets/Hero/run/hero_run0006.png" id="52_mu48y"]
+[ext_resource type="Texture2D" uid="uid://h3jkmmbkvjys" path="res://Assets/Hero/run/hero_run0007.png" id="53_8uywf"]
+[ext_resource type="Texture2D" uid="uid://ge0r32fvl85a" path="res://Assets/Hero/run/hero_run0008.png" id="54_3tugc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xysjx"]
 atlas = ExtResource("3_yvfid")
@@ -241,11 +249,40 @@ animations = [{
 "loop": false,
 "name": &"JumpUp",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_5cjoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_nywps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_yvn4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0us7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_0uql1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_mu48y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_8uywf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_3tugc")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 20.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imq01"]
-radius = 22.0107
-height = 101.999
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e8a0b"]
+radius = 20.0
+height = 92.0
 
 [sub_resource type="Animation" id="Animation_baaww"]
 resource_name = "Attack"
@@ -259,7 +296,6 @@ _data = {
 radius = 47.1699
 
 [node name="Hero" type="CharacterBody2D"]
-rotation = 0.00361523
 script = ExtResource("1_b7iv7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -280,11 +316,11 @@ frame_progress = 0.722374
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3et2e")
-animation = &"Death"
+animation = &"Running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.022, -10)
-shape = SubResource("CapsuleShape2D_imq01")
+position = Vector2(1, -3)
+shape = SubResource("CapsuleShape2D_e8a0b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dh07pidx0d5i8"]
+[gd_scene load_steps=8 format=4 uid="uid://dh07pidx0d5i8"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_q1oak"]
 [ext_resource type="Texture2D" uid="uid://cow0v2y5c1nmc" path="res://Assets/UI/6.png" id="2_lisun"]
+[ext_resource type="PackedScene" uid="uid://rn33hiquwb16" path="res://Scenes/saw_run.tscn" id="3_xj3g2"]
+[ext_resource type="PackedScene" uid="uid://cyufubwmuuwyp" path="res://Scenes/laser_trap.tscn" id="4_0wo46"]
+[ext_resource type="PackedScene" uid="uid://4rxsngw1n138" path="res://Scenes/laser_spikes.tscn" id="5_l6vtl"]
 
 [sub_resource type="Gradient" id="Gradient_7cag3"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -26,18 +29,17 @@ position = Vector2(1163, -28)
 
 [node name="Hero" parent="." index="4"]
 position = Vector2(578, 230)
-appleCount = 20
+appleCount = 35
 
-[node name="MainUI" parent="." index="6"]
-visible = false
-
-[node name="TextureRectNbr" parent="LevelCanvas" index="5"]
+[node name="TextureRectNbr" parent="LevelCanvas" index="6"]
 texture = ExtResource("2_lisun")
 
 [node name="SpawnEnemy" parent="." index="10"]
-enemyCount = 4
+enemyCount = 5
 numbers = Array[Vector2]([Vector2(1218, 340)])
-numbersDoc = Array[Vector2]([Vector2(920, 377), Vector2(15, -60)])
+numbersFly = Array[Vector2]([Vector2(560, -200)])
+numbersLady = Array[Vector2]([Vector2(-5, 113)])
+numbersDoc = Array[Vector2]([Vector2(920, 377)])
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="11"]
 position = Vector2(-105, 200)
@@ -82,3 +84,16 @@ offset_left = 1651.0
 offset_top = -159.0
 offset_right = 1661.0
 offset_bottom = -149.0
+
+[node name="sawRun" parent="." index="19" instance=ExtResource("3_xj3g2")]
+position = Vector2(442, 607)
+rotation = 1.5708
+movement_time_saw = 2500
+speed = 250.0
+
+[node name="laserTrap" parent="." index="20" instance=ExtResource("4_0wo46")]
+position = Vector2(1114, 320)
+scale = Vector2(1.1, 2.3)
+
+[node name="laserSpikes" parent="." index="21" instance=ExtResource("5_l6vtl")]
+position = Vector2(548, 62)

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://djp4omhmg288v"]
+[gd_scene load_steps=8 format=4 uid="uid://djp4omhmg288v"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_lx3fq"]
 [ext_resource type="Texture2D" uid="uid://cybiivb4ktk41" path="res://Assets/UI/7.png" id="2_tw7oc"]
+[ext_resource type="PackedScene" uid="uid://few2itfvceep" path="res://Scenes/laser_turret.tscn" id="3_aaqt6"]
+[ext_resource type="PackedScene" uid="uid://dufoed56x4fbk" path="res://Scenes/blades_run.tscn" id="4_0ymle"]
+[ext_resource type="PackedScene" uid="uid://rn33hiquwb16" path="res://Scenes/saw_run.tscn" id="5_kvvku"]
 
 [sub_resource type="Gradient" id="Gradient_oa4j5"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -25,23 +28,15 @@ tile_map_data = PackedByteArray("AAAzABUAAAACAAAAAAAyABUAAAABAAAAAAAxABUAAAABAAA
 position = Vector2(1171, 59)
 
 [node name="Hero" parent="." index="4"]
-appleCount = 25
+appleCount = 35
 
-[node name="MainUI" parent="." index="6"]
-visible = false
-
-[node name="TextureButtonJump" parent="LevelCanvas" index="2"]
-visible = true
-
-[node name="TextureButtonHit" parent="LevelCanvas" index="3"]
-visible = true
-
-[node name="TextureRectNbr" parent="LevelCanvas" index="5"]
+[node name="TextureRectNbr" parent="LevelCanvas" index="6"]
 texture = ExtResource("2_tw7oc")
 
 [node name="SpawnEnemy" parent="." index="10"]
-enemyCount = 5
+enemyCount = 6
 numbers = Array[Vector2]([Vector2(-120, -269)])
+numbersFly = Array[Vector2]([Vector2(1200, -200)])
 numbersLady = Array[Vector2]([Vector2(-150, 29)])
 numbersDoc = Array[Vector2]([Vector2(560, -250), Vector2(1300, 451)])
 
@@ -88,3 +83,18 @@ offset_left = 1458.0
 offset_top = 512.0
 offset_right = 1468.0
 offset_bottom = 522.0
+
+[node name="laserTurret" parent="." index="19" instance=ExtResource("3_aaqt6")]
+position = Vector2(599, 289)
+
+[node name="bladesRun" parent="." index="20" instance=ExtResource("4_0ymle")]
+position = Vector2(88, -290)
+scale = Vector2(3, 5)
+
+[node name="sawRun" parent="." index="21" instance=ExtResource("5_kvvku")]
+position = Vector2(1342, 608)
+rotation = 1.5708
+move_saw_time = 5
+movement_time_saw = 2000
+speed = 300.0
+direction = -1

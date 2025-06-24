@@ -42,6 +42,7 @@ var alive=true
 var enable_button = true
 
 func _ready() -> void:
+	animationPlay.flip_h =  false
 	AudioController.back_play()
 	animationPlay.play("Ideal")
 	shoot_speed_timer.wait_time = 1.0/shootSpeed
@@ -61,8 +62,30 @@ func shoot():
 	
 	
 func _physics_process(delta: float) -> void:
+	#var direction = Vector2.ZERO
 	if alive==true:
-	
+		
+		"""if Input.is_action_pressed("ui_right") and is_on_floor():
+			direction.x = 1
+			velocity = direction.normalized() * 100
+			rotation = 0
+			animationPlay.play("Running")
+			move_and_slide()
+		if Input.is_action_just_released("ui_right"):
+			animationPlay.stop()
+			velocity = Vector2.ZERO
+		
+		if Input.is_action_pressed("ui_left")  and is_on_floor():
+			direction.x = -1
+			velocity = direction.normalized() * 100
+			rotation = 0
+			animationPlay.play("Running")
+			move_and_slide()
+
+		if Input.is_action_just_released("ui_left"):
+			animationPlay.stop()
+			velocity = Vector2.ZERO"""
+
 		if not is_on_floor() and is_freez:
 			velocity += get_gravity()*0.5 * delta
 			
@@ -95,7 +118,7 @@ func _physics_process(delta: float) -> void:
 			appleCount = appleCount - 1 #reduce count of apple in each through
 			emit_signal("applesCount",appleCount) #emit signal to reduce count of apples in canvas screen 
 
-		if !is_on_floor() and rotate_it:
+		if !is_on_floor() and rotate_it: #and (!Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left")):
 			animationPlay.offset =Vector2(0,-25)
 			rotation += ro_speed * delta
 
@@ -130,8 +153,9 @@ func _physics_process(delta: float) -> void:
 			rotate_it = true
 			
 			
-		if is_falling and is_on_floor():
-			
+		if is_falling and is_on_floor():# and (!Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left")):
+			scale.x=1
+			scale.y=1
 			while int(rotation) !=0:
 				await get_tree().create_timer(0.1).timeout
 				if int(rotation) <0:
@@ -143,20 +167,21 @@ func _physics_process(delta: float) -> void:
 			flame.stop()
 			animationPlay.play("JumpDown")
 
-		if air_jump and !is_on_floor():
+		if air_jump and !is_on_floor():# and (!Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left")):
 			animationPlay.play("JumpUp")
 		
 		# Transition to Idle when landing on the floor
-		if is_on_floor() and is_jumping:
+		if is_on_floor() and is_jumping:# and (!Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left")):
 			animationPlay.play("Ideal")
 				
-		if !is_on_floor():
+		if !is_on_floor():# and (!Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left")):
 			flame.visible = true
 			flame.play()
 		
 		if appleCount <= 0 or lifes<=0:
 			if FileAccess.file_exists("res://Scenes/GameOver.tscn"): #check if file exsist or not
 				get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+		
 		move_and_slide()
 				
 	if alive==false:
