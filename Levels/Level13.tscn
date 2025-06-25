@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://2iclhavlisqv"]
+[gd_scene load_steps=8 format=4 uid="uid://2iclhavlisqv"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_gmh50"]
 [ext_resource type="Texture2D" uid="uid://dypv3jobahe1u" path="res://Assets/UI/3.png" id="2_yowcd"]
+[ext_resource type="PackedScene" uid="uid://cyufubwmuuwyp" path="res://Scenes/laser_trap.tscn" id="3_3vx8a"]
+[ext_resource type="PackedScene" uid="uid://few2itfvceep" path="res://Scenes/laser_turret.tscn" id="4_yar1s"]
+[ext_resource type="PackedScene" uid="uid://dufoed56x4fbk" path="res://Scenes/blades_run.tscn" id="5_smu57"]
 
 [sub_resource type="Gradient" id="Gradient_0ldxb"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -73,3 +76,15 @@ offset_left = 1682.0
 offset_top = 289.0
 offset_right = 1692.0
 offset_bottom = 299.0
+
+[node name="laserTrap" parent="." index="17" instance=ExtResource("3_3vx8a")]
+position = Vector2(1467, 41)
+rotation = 1.5708
+scale = Vector2(9, 7.6)
+
+[node name="laserTurret" parent="." index="18" instance=ExtResource("4_yar1s")]
+position = Vector2(832, 609)
+
+[node name="bladesRun" parent="." index="19" instance=ExtResource("5_smu57")]
+position = Vector2(503, -272)
+scale = Vector2(3, 6)
