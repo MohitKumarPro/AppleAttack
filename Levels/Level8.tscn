@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dsywganbb3icq"]
+[gd_scene load_steps=8 format=4 uid="uid://dsywganbb3icq"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_7l5ec"]
 [ext_resource type="Texture2D" uid="uid://bsahinddq6jd3" path="res://Assets/UI/8.png" id="2_gyb6k"]
 [ext_resource type="PackedScene" uid="uid://few2itfvceep" path="res://Scenes/laser_turret.tscn" id="3_03fr0"]
 [ext_resource type="PackedScene" uid="uid://4rxsngw1n138" path="res://Scenes/laser_spikes.tscn" id="4_ifqtl"]
+[ext_resource type="PackedScene" uid="uid://dufoed56x4fbk" path="res://Scenes/blades_run.tscn" id="5_rv0pv"]
 
 [sub_resource type="Gradient" id="Gradient_uxq3u"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -99,3 +100,7 @@ position = Vector2(1304, 287)
 
 [node name="laserSpikes5" parent="." index="24" instance=ExtResource("4_ifqtl")]
 position = Vector2(1209, 287)
+
+[node name="bladesRun" parent="." index="25" instance=ExtResource("5_rv0pv")]
+position = Vector2(599, -210)
+scale = Vector2(3, 8)

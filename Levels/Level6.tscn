@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dh07pidx0d5i8"]
+[gd_scene load_steps=9 format=4 uid="uid://dh07pidx0d5i8"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_q1oak"]
 [ext_resource type="Texture2D" uid="uid://cow0v2y5c1nmc" path="res://Assets/UI/6.png" id="2_lisun"]
 [ext_resource type="PackedScene" uid="uid://rn33hiquwb16" path="res://Scenes/saw_run.tscn" id="3_xj3g2"]
 [ext_resource type="PackedScene" uid="uid://cyufubwmuuwyp" path="res://Scenes/laser_trap.tscn" id="4_0wo46"]
 [ext_resource type="PackedScene" uid="uid://4rxsngw1n138" path="res://Scenes/laser_spikes.tscn" id="5_l6vtl"]
+[ext_resource type="PackedScene" uid="uid://b41bjp5exqdvq" path="res://Scenes/gun_trap.tscn" id="6_r6ui3"]
 
 [sub_resource type="Gradient" id="Gradient_7cag3"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -35,10 +36,10 @@ appleCount = 35
 texture = ExtResource("2_lisun")
 
 [node name="SpawnEnemy" parent="." index="10"]
-enemyCount = 5
+enemyCount = 6
 numbers = Array[Vector2]([Vector2(1218, 340)])
 numbersFly = Array[Vector2]([Vector2(560, -200)])
-numbersLady = Array[Vector2]([Vector2(-5, 113)])
+numbersLady = Array[Vector2]([Vector2(-5, 113), Vector2(1360, -200)])
 numbersDoc = Array[Vector2]([Vector2(920, 377)])
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="11"]
@@ -97,3 +98,10 @@ scale = Vector2(1.1, 2.3)
 
 [node name="laserSpikes" parent="." index="21" instance=ExtResource("5_l6vtl")]
 position = Vector2(548, 62)
+
+[node name="GunTrap" parent="." index="22" instance=ExtResource("6_r6ui3")]
+position = Vector2(1729, -95)
+
+[node name="laserTrap2" parent="." index="23" instance=ExtResource("4_0wo46")]
+position = Vector2(153, -257)
+scale = Vector2(1, 2.28)

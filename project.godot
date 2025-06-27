@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DoctorKiller"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/landing_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Assets/UI/gameLogo.PNG"
 
@@ -60,7 +60,7 @@ attack={
 
 [input_devices]
 
-pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [rendering]
 

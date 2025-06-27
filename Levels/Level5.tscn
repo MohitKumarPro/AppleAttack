@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://c03e4xgxb80kb"]
+[gd_scene load_steps=9 format=4 uid="uid://c03e4xgxb80kb"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_y6uwr"]
 [ext_resource type="Texture2D" uid="uid://dqfdmlq210tt" path="res://Assets/UI/5.png" id="2_p6rja"]
 [ext_resource type="PackedScene" uid="uid://few2itfvceep" path="res://Scenes/laser_turret.tscn" id="3_hvlcl"]
 [ext_resource type="PackedScene" uid="uid://rn33hiquwb16" path="res://Scenes/saw_run.tscn" id="4_1lny7"]
+[ext_resource type="PackedScene" uid="uid://dufoed56x4fbk" path="res://Scenes/blades_run.tscn" id="5_eyq01"]
+[ext_resource type="PackedScene" uid="uid://4rxsngw1n138" path="res://Scenes/laser_spikes.tscn" id="6_jnmwr"]
 
 [sub_resource type="Gradient" id="Gradient_hw7fp"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -34,7 +36,8 @@ appleCount = 30
 texture = ExtResource("2_p6rja")
 
 [node name="SpawnEnemy" parent="." index="10"]
-enemyCount = 4
+enemyCount = 5
+numbersFly = Array[Vector2]([Vector2(490, -200)])
 numbersLady = Array[Vector2]([Vector2(1520, -200), Vector2(1680, 450)])
 numbersDoc = Array[Vector2]([Vector2(100, 100)])
 
@@ -91,3 +94,13 @@ rotation = 1.5708
 move_saw_time = 5
 movement_time_saw = 2000
 speed = 250.0
+
+[node name="bladesRun" parent="." index="21" instance=ExtResource("5_eyq01")]
+position = Vector2(1047, -292)
+scale = Vector2(3, 5)
+
+[node name="laserSpikes" parent="." index="22" instance=ExtResource("6_jnmwr")]
+position = Vector2(1450, 385)
+
+[node name="laserSpikes2" parent="." index="23" instance=ExtResource("6_jnmwr")]
+position = Vector2(1313, 384)
