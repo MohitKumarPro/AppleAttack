@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://bho6hhfec12ta"]
+[gd_scene load_steps=9 format=4 uid="uid://bho6hhfec12ta"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_1juvx"]
 [ext_resource type="PackedScene" uid="uid://4rxsngw1n138" path="res://Scenes/laser_spikes.tscn" id="2_otsnw"]
+[ext_resource type="Texture2D" uid="uid://c72qqc7bl34c" path="res://Assets/UI/2.png" id="2_w1kx4"]
 [ext_resource type="PackedScene" uid="uid://dufoed56x4fbk" path="res://Scenes/blades_run.tscn" id="3_rna6v"]
 [ext_resource type="PackedScene" uid="uid://b41bjp5exqdvq" path="res://Scenes/gun_trap.tscn" id="4_gswho"]
 [ext_resource type="PackedScene" uid="uid://cyufubwmuuwyp" path="res://Scenes/laser_trap.tscn" id="5_01l14"]
@@ -30,6 +31,14 @@ position = Vector2(1666, 150)
 [node name="Hero" parent="." index="4"]
 position = Vector2(-71, 178)
 appleCount = 30
+
+[node name="TextureRectNbr2" type="TextureRect" parent="LevelCanvas" index="7"]
+offset_left = 1495.0
+offset_top = 8.0
+offset_right = 1510.0
+offset_bottom = 37.0
+texture = ExtResource("2_w1kx4")
+expand_mode = 1
 
 [node name="SpawnEnemy" parent="." index="10"]
 enemyCount = 5

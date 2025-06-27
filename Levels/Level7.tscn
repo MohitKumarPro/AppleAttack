@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://djp4omhmg288v"]
+[gd_scene load_steps=10 format=4 uid="uid://djp4omhmg288v"]
 
 [ext_resource type="PackedScene" uid="uid://hqubiqkp2wyl" path="res://Scenes/Main.tscn" id="1_lx3fq"]
 [ext_resource type="Texture2D" uid="uid://cybiivb4ktk41" path="res://Assets/UI/7.png" id="2_tw7oc"]
 [ext_resource type="PackedScene" uid="uid://few2itfvceep" path="res://Scenes/laser_turret.tscn" id="3_aaqt6"]
 [ext_resource type="PackedScene" uid="uid://dufoed56x4fbk" path="res://Scenes/blades_run.tscn" id="4_0ymle"]
 [ext_resource type="PackedScene" uid="uid://rn33hiquwb16" path="res://Scenes/saw_run.tscn" id="5_kvvku"]
+[ext_resource type="PackedScene" uid="uid://cyufubwmuuwyp" path="res://Scenes/laser_trap.tscn" id="6_c1li3"]
+[ext_resource type="PackedScene" uid="uid://4rxsngw1n138" path="res://Scenes/laser_spikes.tscn" id="7_4gosl"]
 
 [sub_resource type="Gradient" id="Gradient_oa4j5"]
 offsets = PackedFloat32Array(0, 0.825397, 1)
@@ -28,16 +30,16 @@ tile_map_data = PackedByteArray("AAAzABUAAAACAAAAAAAyABUAAAABAAAAAAAxABUAAAABAAA
 position = Vector2(1171, 59)
 
 [node name="Hero" parent="." index="4"]
-appleCount = 35
+appleCount = 40
 
 [node name="TextureRectNbr" parent="LevelCanvas" index="6"]
 texture = ExtResource("2_tw7oc")
 
 [node name="SpawnEnemy" parent="." index="10"]
-enemyCount = 6
+enemyCount = 7
 numbers = Array[Vector2]([Vector2(-120, -269)])
 numbersFly = Array[Vector2]([Vector2(1200, -200)])
-numbersLady = Array[Vector2]([Vector2(-150, 29)])
+numbersLady = Array[Vector2]([Vector2(-150, 29), Vector2(1430, -150)])
 numbersDoc = Array[Vector2]([Vector2(560, -250), Vector2(1300, 451)])
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="11"]
@@ -98,3 +100,14 @@ move_saw_time = 5
 movement_time_saw = 2000
 speed = 300.0
 direction = -1
+
+[node name="bladesRun2" parent="." index="22" instance=ExtResource("4_0ymle")]
+position = Vector2(436, -260)
+scale = Vector2(3, 7)
+
+[node name="laserTrap" parent="." index="23" instance=ExtResource("6_c1li3")]
+position = Vector2(768, -258)
+scale = Vector2(1, 2.3)
+
+[node name="laserSpikes" parent="." index="24" instance=ExtResource("7_4gosl")]
+position = Vector2(598, -192)

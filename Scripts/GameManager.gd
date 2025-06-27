@@ -29,7 +29,7 @@ func add_json(Level, Stars, Status ,save_json): #can be called from anywhere to 
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	#DirAccess.remove_absolute(path)
+	#DirAccess.remove_absolute11(path)
 	if !FileAccess.file_exists(path):
 		saveGame(save_json)
 	data = loadGame() #runs and load the game data 

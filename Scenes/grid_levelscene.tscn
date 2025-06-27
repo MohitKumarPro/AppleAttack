@@ -310,48 +310,63 @@ size_flags_horizontal = 3
 columns = 5
 
 [node name="TextureButton" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton2" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton3" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton4" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton5" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton6" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton7" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton8" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton9" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton10" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton11" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton12" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton13" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton14" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [node name="TextureButton15" parent="Control/HBoxContainer/GridContainer2" instance=ExtResource("20_34al0")]
+visible = false
 layout_mode = 2
 
 [connection signal="pressed" from="leftTextButton" to="." method="_on_left_text_button_pressed"]
